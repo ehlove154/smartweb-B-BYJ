@@ -1,1 +1,0 @@
-https://apis.data.go.kr/1160100/service/GetKrxListedInfoService/getItemInfo?serviceKey=HHNbHnGxswdYzf2oDjiFwz4jioDDIts%2FghRBfiM8TW8yXUbbnpgv%2BN7AaeOXEaUV%2F18BD8%2FkATlKRlIzrUAKPg%3D%3D&numOfRows=100&pageNo=1&resultType=json
