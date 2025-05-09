@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="/study/assets/scripts/calc-xhr.js"></script>
+    <title>계산기 (XHR)</title>
+</head>
+<body>
+<form method="post">
+    <label>
+        <input autofocus type="number" name="a" value="0">
+    </label>
+    <label>
+        <select name="op">
+            <option selected value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+            <option value="modulo">%</option>
+            <option value="power">**</option>
+        </select>
+    </label>
+    <label>
+        <input autofocus type="number" name="b" value="0">
+    </label>
+    <button type="submit">계산하기</button>
+</form>
+<div id="intro"><b>계산하기</b> 버튼을 클릭해 주세요.</div>
+<div id="result"></div>
+<div id="error"></div>
+</body>
+</html>

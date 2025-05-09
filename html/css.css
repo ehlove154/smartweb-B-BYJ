@@ -1,0 +1,42 @@
+/*body > div:first-child > span:nth-child(2) {*/
+/*    color: mediumpurple;*/
+/*}*/
+/*body > div:nth-child(2) > span:nth-child(odd) {*/
+/*    color: darkorange;*/
+/*}*/
+/*body > div:nth-child(3) > span:nth-child(3n){*/
+/*    color: dodgerblue;*/
+/*}*/
+/*.b:first-of-type{*/
+/*    color: red;*/
+/*}*/
+label > span::before{
+    content: '- ';
+}
+
+label:has(> input:required)>span{
+    color: red;
+}
+label:has(> input:required)>span::after{
+    content: '*';
+}
+p {
+    background-color: #17201a;
+    color: #eaecee;
+    padding: 1rem 1.25rem;
+    text-align: justify;
+    line-height: 1.333;
+}
+
+p::first-letter{
+    font-size: 200%;
+}
+
+p::first-line{
+    font-style: italic;
+}
+
+p::selection{
+    background-color: #eaecee;
+    color: #17201a;
+}

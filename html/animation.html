@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animation</title>
+    <style>
+        .box{
+            width: 5rem;
+            height: 5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #ec7063;
+
+            animation-duration: 2.5s;
+            animation-iteration-count: infinite;
+            animation-name: animation-box;
+            animation-timing-function: linear;
+            animation-delay: 1s;
+        }
+        @keyframes animation-box {
+            0% {
+                top: 0;
+                left: 0;
+            }
+            25% {
+                top: 0;
+                left: calc(100% - 5rem);
+            }
+            50% {
+                top: calc(100% - 5rem);
+                left: calc(100% - 5rem);
+            }
+            75% {
+                top: calc(100% - 5rem);
+                left: 0;
+            }
+            100% {
+                top: 0;
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google</title>
+    <link rel="stylesheet" href="./google.css" type="text/css">
+</head>
+<body>
+<header class="header">
+    <ul class="menu">
+        <li class="item">
+            <a class="link" href="#">Google 정보</a>
+        </li>
+        <li class="item">
+            <a class="link" href="#">스토어</a>
+        </li>
+        <li class="stretch"></li>
+        <li class="item">
+            <a class="link" href="#">Gmail</a>
+        </li>
+        <li class="item">
+            <a class="link" href="#">이미지</a>
+        </li>
+        <li class="item">
+            <label class="apps">
+                <img class="icon" src="google-apps.png" alt="google app">
+                <input class="checkbox" type="checkbox">
+                <span class="tooltip">Google 앱</span>
+            </label>
+            <div class="app-menu">
+                <ul class="list">
+                    <li class="item">
+                        <a href="#" class="link account">
+                            <span class="icon"></span>
+                            <span class="caption">계정</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link search">
+                            <span class="icon"></span>
+                            <span class="caption">검색</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link map">
+                            <span class="icon"></span>
+                            <span class="caption">지도</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link youtube">
+                            <span class="icon"></span>
+                            <span class="caption">YouTube</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link news">
+                            <span class="icon"></span>
+                            <span class="caption">뉴스</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link gmail">
+                            <span class="icon"></span>
+                            <span class="caption">Gmail</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="item">
+            <a class="login-button" href="#">로그인</a>
+        </li>
+    </ul>
+</header>
+
+<main class="main">
+    <img src="./google-logo.png" alt="google" class="logo">
+    <form class="search-form">
+        <label class="label">
+            <svg class="icon" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+            </svg>
+            <input class="input" required autofocus maxlength="50"  minlength="1" name="keyword" type="search">
+            <img src="https://www.gstatic.com/inputtools/images/tia.png" alt="입력도구" class="feature">
+            <svg class="feature" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285f4" d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z"></path><path fill="#34a853" d="m11 18.08h2v3.92h-2z"></path><path fill="#fbbc04" d="m7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45 0.56 2.42 1.47 3.38v0.32l-1.15 1.18z"></path><path fill="#ea4335" d="m12 16.93a4.97 5.25 0 0 1 -3.54 -1.55l-1.41 1.49c1.26 1.34 3.02 2.13 4.95 2.13 3.87 0 6.99-2.92 6.99-7h-1.99c0 2.92-2.24 4.93-5 4.93z"></path></svg>
+            <svg class="feature" focusable="false" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="192" width="192"></rect><g><circle fill="#34a853" cx="144.07" cy="144" r="16"></circle><circle fill="#4285f4" cx="96.07" cy="104" r="24"></circle><path fill="#ea4335" d="M24,135.2c0,18.11,14.69,32.8,32.8,32.8H96v-16l-40.1-0.1c-8.8,0-15.9-8.19-15.9-17.9v-18H24V135.2z"></path><path fill="#fbbc04" d="M168,72.8c0-18.11-14.69-32.8-32.8-32.8H116l20,16c8.8,0,16,8.29,16,18v30h16V72.8z"></path><path fill="#4285f4" d="M112,24l-32,0L68,40H56.8C38.69,40,24,54.69,24,72.8V92h16V74c0-9.71,7.2-18,16-18h80L112,24z"></path></g></svg>
+        </label>
+        <div class="button-container">
+            <button class="button" type="submit">Google 검색</button>
+            <button class="button" type="submit">I'm Feeling Lucky</button>
+        </div>
+    </form>
+</main>
+
+<footer class="footer">
+    <ul class="line">
+        <li class="item">대한민국</li>
+    </ul>
+    <ul class="line">
+        <li class="item">
+            <a href="#" class="link">광고</a>
+        </li>
+        <li class="item">
+            <a href="#" class="link">비즈니스</a>
+        </li>
+        <li class="item">
+            <a href="#" class="link">검색의 원리</a>
+        </li>
+        <li class="stretch"></li>
+        <li class="item">
+            <a href="#" class="link">개인정보처리방침</a>
+        </li>
+        <li class="item">
+            <a href="#" class="link">약관</a>
+        </li>
+        <li class="item">
+            <label class="link setting">
+                <span class="caption">설정</span>
+                <input type="checkbox" class="checkbox">
+            </label>
+        </li>
+    </ul>
+</footer>
+</body>
+</html>

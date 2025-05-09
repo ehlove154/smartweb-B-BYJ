@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>McDonald KIOSK</title>
+    <link rel="icon" href="./assets/images/img.png" type="image/png">
+    <link rel="stylesheet" href="./assets/css/common.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/index.css" type="text/css">
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+    <script defer src="./assets/scripts/index.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="dialogCover"></div>
+<div id="dialog">
+    <div class="content"></div>
+    <button class="ok" type="button">확인</button>
+</div>
+<div id="payCover"></div>
+<div id="pay">
+    <span class="title">결제</span>
+    <span class="message">결제하실 항목을 확인하시고, 결제 수단을 선택해 주세요.</span>
+    <span class="subtitle">결제 항목</span>
+    <ul class="menu">
+<!--메뉴자리-->
+    </ul>
+    <span class="total">999,999원</span> <!--디자인용-->
+    <span class="subtitle">결제 수단</span>
+    <div class="method-container">
+        <label class="label">
+            <input type="radio" class="radio" value="card" name="method">
+            <img src="./assets/images/index/pay.method.card.png" alt="" class="icon">
+            <span class="caption">신용/체크 카드</span>
+        </label>
+        <label class="label">
+            <input type="radio" class="radio" value="kakaopay" name="method">
+            <img src="./assets/images/index/pay.method.kakaopay.png" alt="" class="icon">
+            <span class="caption">카카오페이</span>
+        </label>
+    </div>
+    <div class="button-container">
+        <button class="button cancel" type="button">취소</button>
+        <button class="button confirm" type="button">결제</button>
+    </div>
+</div>
+<div id="intro" class="visible">
+    <div class="promotion"></div>
+    <div class="message">
+        <img src="./assets/images/logo.png" alt="logo" class="logo">
+        <span class="caption">주문하시려면 터치하세요.</span>
+    </div>
+</div>
+<div id="order">
+    <div class="promotion"></div>
+    <div class="menu">
+        <form class="category">
+            <label class="label">
+                <input checked type="radio" class="radio" name="category" value="recommendation">
+                <span class="caption">추천 메뉴</span>
+            </label>
+            <label class="label">
+                <input type="radio" class="radio" name="category" value="burgers">
+                <span class="caption">버거 & 세트</span>
+            </label>
+            <label class="label">
+                <input type="radio" class="radio" name="category" value="snacks">
+                <span class="caption">스낵 & 사이드</span>
+            </label>
+            <label class="label">
+                <input type="radio" class="radio" name="category" value="beverages">
+                <span class="caption">음료</span>
+            </label>
+            <label class="label">
+                <input type="radio" class="radio" name="category" value="desserts">
+                <span class="caption">디저트</span>
+            </label>
+            <label class="label">
+                <input type="radio" class="radio" name="category" value="happyMeals">
+                <span class="caption">해피밀®</span>
+            </label>
+        </form>
+        <ul class="list">
+        </ul>
+    </div>
+    <div class="cart">
+        <div class="caption">
+            주문 내역
+            <span class="stretch"></span>
+            합계
+            <span class="sum">0</span>
+        </div>
+        <ul class="list">
+            <li class="message empty">장바구니가 비어 있습니다.</li>
+        </ul>
+    </div>
+    <div class="button-container">
+        <button class="button cancel" type="button">주문 취소</button>
+        <button class="button confirm" type="button">주문 완료</button>
+    </div>
+</div>
+</body>
+</html>

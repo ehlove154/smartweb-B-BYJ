@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>게시글 수정 - SUB</title>
+    <link rel="stylesheet" href="/assets/styles/common.css">
+    <link rel="stylesheet" href="/article/assets/styles/modify.css">
+    <script th:if="${board == null}">
+        alert("존재하지 않는 게시판입니다.");
+        if (history.length > 1) {
+            history.back();
+        } else {
+            window.close();
+        }
+    </script>
+    <script th:if="${article == null}">
+        alert("존재하지 않는 게시글입니다.");
+        if (history.length > 1) {
+            history.back();
+        } else {
+            window.close();
+        }
+    </script>
+    <script th:if="${session.signedUser != null && article != null && !session.signedUser.isAdmin() && !session.signedUser.getEmail().equals(article.getUserEmail())}">
+        // 게시판은 존재하고 && 게시판이 관리자 전용이고 && (로그인을 안했거나 || 로그인은 했는데 관리자가 아닐 경우)
+        alert("게시글을 수정할 권한이 없습니다.");
+        if (history.length > 1) {
+            history.back();
+        } else {
+            window.close();
+        }
+
+    </script>
+    <script th:if="${session.signedUser == null}">
+        alert("게시글을 수정할 권한이 없습니다. 로그인해 주세요.");
+        location.href = '/user/login';
+    </script>
+    <script src="/assets/scripts/common.js"></script>
+    <script defer src="/assets/scripts/dialog.js"></script>
+    <script defer src="/article/assets/scripts/modify.js"></script>
+</head>
+<body th:if="${board != null && article != null && session.signedUser != null && (session.signedUser.isAdmin() || session.signedUser.getEmail().equals(article.getUserEmail()))}">
+<!-- 게시판이 존재하고 && 로그인한 상태고 && (게시판이 관리자 전용이 아니거나 || 로그인한 사용자가 관리자라면) -->
+<form novalidate id="modifyForm">
+    <h1 class="title">게시글 수정 (<span th:text="${board.getDisplayText()}"></span>)</h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <th scope="row">원래 제목</th>
+            <td th:text="${article.getTitle()}"></td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="modifyTitle" class="caption">제목</label>
+            </th>
+            <td>
+                <div class="row">
+                    <input autofocus required class="-object-field" id="modifyTitle" maxlength="100" minlength="1" name="title" type="text" th:value="${article.getTitle()}">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="modifyContent">내용</label>
+            </th>
+            <td>
+                <div class="row">
+                    <textarea required class="-object-field" id="modifyContent" maxlength="10000" minlength="1" name="content" rows="10" th:text="${article.getContent()}"></textarea>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="button-container">
+        <a class="-object-button --color-gray" th:href="@{/article/ (index = ${article.getIndex()})}">돌아가기</a> <!-- @{주소 (이름1 = 값1, 이름2 = 값2)} -->
+        <button class="-object-button --color-blue" type="submit">수정하기</button>
+    </div>
+    <input type="hidden" name="index" th:value="${article.getIndex()}">
+</form>
+</body>
+</html>

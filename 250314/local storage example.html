@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local Storage Example - login</title>
+</head>
+<body>
+<form>
+    <label>
+        <input name="id" placeholder="ID" type="text">
+    </label>
+    <br>
+    <label>
+        <input name="pw" placeholder="Password" type="password">
+    </label>
+    <br>
+    <label>
+        <input name="rem" type="checkbox"> 아이디를 기억할까요?
+    </label>
+    <br>
+    <button type="submit">로그인</button>
+</form>
+<script>
+    const $form = document.body.querySelector(`:scope > form`);
+    $form.onsubmit = () => {
+        if ($form[`rem`].checked === true) {
+            localStorage.setItem(`remId`, $form[`id`].value);
+        } else {
+            localStorage.removeItem(`remId`);
+        }
+    };
+    $form[`id`].value = localStorage.getItem(`remId`);
+    if ($form[`id`].value.length === 0) {
+        $form[`id`].focus();
+    } else {
+        $form[`pw`].focus();
+        $form[`rem`].checked = true;
+    }
+</script>
+</body>
+</html>

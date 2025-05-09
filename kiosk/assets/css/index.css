@@ -1,0 +1,16 @@
+@import "index/intro.css";
+@import "index/order.css";
+@import "index/dialog.css";
+@import "index/pay.css";
+
+html{
+    height: 100%;
+}
+
+body{
+    cursor: default;
+    user-select: none;
+    height: 100%;
+    background-color: #ffffff;
+    color: #000000;
+}

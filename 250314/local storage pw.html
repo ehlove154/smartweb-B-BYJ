@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local Storage Example - pw</title>
+</head>
+<body>
+<form>
+    <label>
+        <input name="id" placeholder="ID" type="text">
+    </label>
+    <br>
+    <label>
+        <input name="pw" placeholder="Password" type="password">
+    </label>
+    <br>
+    <label>
+        <input name="rem" type="checkbox"> 계정정보를 기억할까요?
+    </label>
+    <br>
+    <button type="submit">로그인</button>
+</form>
+<script>
+    const $form = document.body.querySelector(`:scope > form`);
+    $form.onsubmit = () => {
+        if ($form[`rem`].checked === true) {
+            localStorage.setItem(`remAcc`, JSON.stringify({ // JSON.stringify: 오브젝트, 배열 -> 문자열
+                id: $form[`id`].value,
+                pw: $form[`pw`].value
+            }));
+        } else {
+            localStorage.removeItem(`remId`);
+        }
+    };
+
+    if (localStorage.getItem(`remAcc`) != null) {
+        const remAcc = JSON.parse(localStorage.getItem(`remAcc`)); // JSON.parse: 문자열 -> 오브젝트,배열
+        console.log(remAcc);
+        $form[`id`].value = remAcc[`id`];
+        $form[`pw`].value = remAcc[`pw`];
+        $form[`rem`].checked = true;
+    }
+</script>
+</body>
+</html>

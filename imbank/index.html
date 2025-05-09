@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iM뱅크 - 아이엠뱅크</title>
+    <link rel="icon" href="./assets/images/icon.ico">
+    <link href="./assets/styles/common.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/index.css" type="text/css">
+</head>
+<body>
+<header class="layout-wrapper" id="header">
+    <div class="layout-content">
+        <ul class="cs">
+            <li class="item">
+                <a href="#" class="link">은행소개</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">고객센터</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">로그인</a>
+            </li>
+        </ul>
+        <ul class="menu">
+            <li class="item">
+                <a href="#" class="logo">
+                    <img src="./assets/images/logo.png" alt="iM뱅크" class="image">
+                </a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">개인뱅킹</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">기업뱅킹</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">금융상품몰</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">금융서비스</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">인증센터</a>
+            </li>
+            <li class="stretch"></li>
+            <li class="item">
+                <form class="search-form">
+                    <label class="label">
+                        <input required class="input" maxlength="10" minlength="1" name="keyword"
+                               placeholder="검색어를 입력하세요." type="search" title="검색어를 입력하세요.">
+                    </label>
+                    <button class="button" title="검색" type="submit">
+                        <img class="icon" src="./assets/images/index.header.search-form.submit.png" alt="검색">
+                    </button>
+                </form>
+            </li>
+            <li class="item">
+                <label class="label" title="언어/Language">
+                    <img src="./assets/images/index.header.language.png" alt="language" class="icon">
+                    <input type="checkbox" class="checkbox">
+                </label>
+            </li>
+            <li class="item">
+                <label class="label" title="전체 메뉴">
+                    <img src="./assets/images/index.header.menu.png" alt="total menu" class="icon">
+                    <input type="checkbox" class="checkbox">
+                </label>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<main class="layout-wrapper" id="main">
+    <div class="layout-content">
+        <div class="box slide">
+            <div class="controller">
+                <label class="label">
+                    <input checked class="radio" name="step" type="radio" value="1">
+                    <span class="knob"></span>
+                </label>
+                <label class="label">
+                    <input class="radio" name="step" type="radio" value="2">
+                    <span class="knob"></span>
+                </label>
+                <label class="label">
+                    <input class="radio" name="step" type="radio" value="3">
+                    <span class="knob"></span>
+                </label>
+                <label class="label">
+                    <input class="radio" name="step" type="radio" value="4">
+                    <span class="knob"></span>
+                </label>
+                <label class="label">
+                    <input class="radio" name="step" type="radio" value="5">
+                    <span class="knob"></span>
+                </label>
+                <label class="status">
+                    <input type="checkbox" class="checkbox">
+                    <img class="icon play" src="./assets/images/index.main.slide.play.png" alt="재생">
+                    <img class="icon pause" src="./assets/images/index.main.slide.pause.png" alt="일시정지">
+                </label>
+                <button class="button" name="prev" type="button" title="이전">
+                    <img class="icon" src="./assets/images/index.main.slide.prev.png" alt="prev">
+                </button>
+                <button class="button" name="next" type="button" title="다음">
+                    <img class="icon" src="./assets/images/index.main.slide.next.png" alt="next">
+                </button>
+            </div>
+            <div class="page" data-value="1">
+                <div class="background"></div>
+                <h3 class="text subtitle">대구은행의 새로운 이름</h3>
+                <h2 class="text title">iM뱅크</h2>
+                <h4 class="text description">아주 색다른 금융의 시작</h4>
+                <a href="#" class="text link">자세히보기</a>
+            </div>
+            <div class="page" data-value="2">
+                <div class="background"></div>
+                <h3 class="text subtitle">소 · 중 · 청</h3>
+                <h2 class="text title">따뜻한 금융 프로젝트</h2>
+                <h4 class="text description">아이엠뱅크 2024년 '지역상생 민생금융지원' 추진</h4>
+                <a href="#" class="text link">자세히보기</a>
+            </div>
+            <div class="page" data-value="3">
+                <div class="background"></div>
+                <h3 class="text subtitle">금융과 생활을 쉽고 편리하게</h3>
+                <h2 class="text title">모바일 금융</h2>
+                <h4 class="text description">모든 순간이 행복할 당신의 곁에 언제나</h4>
+                <a href="#" class="text link">자세히보기</a>
+            </div>
+            <div class="page" data-value="4">
+                <div class="background"></div>
+                <h3 class="text subtitle">현재와 미래를 잇는 열쇠</h3>
+                <h2 class="text title">ESG 경영실천</h2>
+                <h4 class="text description">지구를 사랑하고 고객을 위하는 착한 은행</h4>
+                <a href="#" class="text link">자세히보기</a>
+            </div>
+            <div class="page" data-value="5">
+                <div class="background"></div>
+                <h3 class="text subtitle">직원의 손글씨로 금융을 토크하다</h3>
+                <h2 class="text title">iM혜민체</h2>
+                <h4 class="text description">또박또박 획마다 아이엠뱅크만의 이야기를 담아낸 폰트!</h4>
+                <a href="#" class="text link">자세히보기</a>
+            </div>
+        </div>
+        <div class="box quick-menu">
+            <ul class="list">
+                <li class="item">
+                    <a href="#" class="link">빠른조회</a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link">금융소비자/민원</a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link">퇴직연금</a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link">상품공시실</a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link">행복파트너</a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link">고객센터</a>
+                </li>
+            </ul>
+        </div>
+        <div class="info">
+            <div class="box auction">
+                <div class="image"></div>
+                <div class="text">
+                    <h2 class="title">경매정보</h2>
+                    <span class="description">부동산 경매 정보</span>
+                </div>
+            </div>
+            <div class="box recruit">
+                <div class="image"></div>
+                <div class="text">
+                    <h2 class="title">채용정보</h2>
+                    <span class="description">아이엠뱅크와 함께</span>
+                </div>
+            </div>
+            <div class="box finance">
+                <div class="image"></div>
+                <div class="text">
+                    <h2 class="title">재테크 정보</h2>
+                    <span class="description">모닝브리핑</span>
+                </div>
+            </div>
+            <div class="box culture">
+                <div class="image"></div>
+                <div class="text">
+                    <h2 class="title">향토와 문화</h2>
+                    <span class="description">우리지역 이야기</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="news-app">
+            <div class="box news">
+                <div class="topic-container">
+                    <label class="topic">
+                        <input checked type="radio" name="topic" class="radio" value="notice">
+                        <span class="caption">새소식</span>
+                    </label>
+                    <label class="topic">
+                        <input type="radio" name="topic" class="radio" value="event">
+                        <span class="caption">이벤트</span>
+                    </label>
+                    <div class="stretch"></div>
+                    <a href="#" class="more">더보기</a>
+                </div>
+                <ul class="content" data-value="notice">
+                    <li class="item">
+                        <a href="#" class="link">iM뱅크 퀵 서비스 이체한도 변경 안내</a>
+                        <span class="date">2025.02.21</span>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">일부 참기기관 디지털금융망업무 일시중단 안내</a>
+                        <span class="date">2025.02.21</span>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">신용정보원 공공마이데이터 시스템 작업에 따른 일부 비대면 가계대출 일시중단 안내</a>
+                        <span class="date">2025.02.21</span>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">『iM뱅크 UX Writing 가이드 개발』사업자 모집 3차공고</a>
+                        <span class="date">2025.02.17</span>
+                    </li>
+                </ul>
+                <ul class="content" data-value="event">
+                    <li class="message">진행 중인 이벤트가 없습니다.</li>
+                </ul>
+            </div>
+            <div class="box app">
+                <h2 class="title">iM뱅크 APP</h2>
+                <ul class="list">
+                    <li class="item imbank">
+                        <div class="image"></div>
+                        <span class="name">iM뱅크</span>
+                    </li>
+                    <li class="item imshop">
+                        <div class="image"></div>
+                        <span class="name">iM샵</span>
+                    </li>
+                    <li class="item imbank-corporate">
+                        <div class="image"></div>
+                        <span class="name">iM뱅크 기업</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="layout-wrapper" id="footer">
+    <div class="layout-content">
+        <ul class="term">
+            <li class="item">
+                <a href="#" class="link">개인정보처리방침</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">신용정보활용체제</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">보호금융상품등록부</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">보안센터</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">보안프로그램</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">접근성설정</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">사고신고</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">연수원</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">영업점안내</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">상품공시실</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">다운로드</a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">민원창구</a>
+            </li>
+        </ul>
+        <ul class="map">
+            <li class="item">
+                <label class="label tel">
+                    <input type="checkbox" class="checkbox">
+                    <span class="caption">대표전화</span>
+                    <span class="tel">1588-5050 / 1566-5050</span>
+                    <img class="icon"
+                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5ElEQVR4nO3UPUpDQRTF8V8sHikCNoL2WYBVSq3cgqVttuAW3EPK9IJFymgTIRZZg42NgqUIIhoeTCHDy3ujmRTC/OE0wz3nMl+XQqFQyMQtVhjmCgxZK8zbir6DXnGWoekpXn7kdjau9YnLLZqO8RFlbmQZFdaaoJJOFTxxzrLNNMB1g+keRwlND3DX4J9hv8vcC0f8FZmfMGrxHeMx8tQZV9jzC87xFgW942LL2iS6dvHX00niEIuGe7sJitcXwZOFasNLjTVF3w4YN/zNHH8+iRM872DKJc/fh6Ccc71QKPwj1j8gazJLnl+5AAAAAElFTkSuQmCC"
+                         alt="chevron-down">
+                </label>
+                <ul class="submenu tel">
+                    <li class="item">
+                        <span class="caption">해외</span>
+                        <span class="tel">82-53-742-5050</span>
+                    </li>
+                    <li class="item">
+                        <span class="caption">음성인식</span>
+                        <span class="tel">1661-5200</span>
+                    </li>
+                    <li class="item">
+                        <span class="caption">인터넷뱅킹</span>
+                        <span class="tel">1661-5100</span>
+                    </li>
+                    <li class="item">
+                        <span class="caption">어르신전용</span>
+                        <span class="tel">1670-9550</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="stretch"></li>
+            <li class="item">
+                <label class="label sns">
+                    <input type="checkbox" class="checkbox">
+                    <span class="caption">SNS</span>
+                    <img class="icon"
+                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5ElEQVR4nO3UPUpDQRTF8V8sHikCNoL2WYBVSq3cgqVttuAW3EPK9IJFymgTIRZZg42NgqUIIhoeTCHDy3ujmRTC/OE0wz3nMl+XQqFQyMQtVhjmCgxZK8zbir6DXnGWoekpXn7kdjau9YnLLZqO8RFlbmQZFdaaoJJOFTxxzrLNNMB1g+keRwlND3DX4J9hv8vcC0f8FZmfMGrxHeMx8tQZV9jzC87xFgW942LL2iS6dvHX00niEIuGe7sJitcXwZOFasNLjTVF3w4YN/zNHH8+iRM872DKJc/fh6Ccc71QKPwj1j8gazJLnl+5AAAAAElFTkSuQmCC"
+                         alt="chevron-down">
+                </label>
+                <ul class="submenu sns">
+                    <li class="item">
+                        <a href="#" class="link">유튜브</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">네이버 블로그</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">페이스북</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">인스타그램</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item">
+                <label class="label site">
+                    <input type="checkbox" class="checkbox">
+                    <span class="caption">관련사이트</span>
+                    <img class="icon"
+                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5ElEQVR4nO3UPUpDQRTF8V8sHikCNoL2WYBVSq3cgqVttuAW3EPK9IJFymgTIRZZg42NgqUIIhoeTCHDy3ujmRTC/OE0wz3nMl+XQqFQyMQtVhjmCgxZK8zbir6DXnGWoekpXn7kdjau9YnLLZqO8RFlbmQZFdaaoJJOFTxxzrLNNMB1g+keRwlND3DX4J9hv8vcC0f8FZmfMGrxHeMx8tQZV9jzC87xFgW942LL2iS6dvHX00niEIuGe7sJitcXwZOFasNLjTVF3w4YN/zNHH8+iRM872DKJc/fh6Ccc71QKPwj1j8gazJLnl+5AAAAAElFTkSuQmCC"
+                         alt="chevron-down">
+                </label>
+                <ul class="submenu site">
+                    <li class="item">
+                        <a href="#" class="link">3355모임통장</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">모금관리시스템(eFMS)</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">사업자 서비스</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">독도지점</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">독도사랑모임</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">금융박물관</a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="link">상해지점</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

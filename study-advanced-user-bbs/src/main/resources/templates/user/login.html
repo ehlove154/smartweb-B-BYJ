@@ -1,0 +1,48 @@
+<!--
+- : 속성(빨간색/파란색 등 색상, 크기, 등등) ex. -color-red
+-- : object 관련된 것들(공통 클래스) ex. --object-button
+--- : object의 자식/자손(소유 구성요소) ex. ---input
+-->
+
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>로그인 - SAUB</title>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/user/assets/styles/login.min.css">
+</head>
+<body>
+<form id="loginForm" novalidate>
+    <h1 class="title">로그인</h1>
+    <label class="--object-label">
+        <span class="---caption">이메일</span>
+        <input autofocus autocomplete="email" required class="--object-field ---field" maxlength="50" minlength="8" name="email" spellcheck="false" type="email">
+    </label>
+    <label class="--object-label">
+        <span class="---caption">비밀번호</span>
+        <input autofocus autocomplete="off" required class="--object-field ---field" maxlength="50" minlength="6" name="password" spellcheck="false" type="password">
+    </label>
+    <label class="--object-check">
+        <input class="---input" name="remember" type="checkbox">
+        <span class="---box"></span>
+        <span class="---caption">이메일을 기억할까요?</span>
+    </label>
+    <button class="--object-button -color-green" type="submit">
+        <img src="/user/assets/images/login/login-form.submit.png" alt="" class="---icon" draggable="false">
+        <span class="---caption">로그인</span>
+    </button>
+    <ul class="menu">
+        <li class="item">
+            <span class="caption">아직 계정이 없으신가요?</span>
+            <a href="/user/register" class="link">회원가입</a>
+        </li>
+        <li class="item">
+            <span class="caption">계정 정보를 분실하셨나요?</span>
+            <a href="/user/recover" class="link">계정 복구</a>
+        </li>
+    </ul>
+</form>
+</body>
+</html>

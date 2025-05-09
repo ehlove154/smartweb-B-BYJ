@@ -1,0 +1,258 @@
+#console {
+    flex-basis: 20rem;
+    flex-shrink: 0;
+    border-right: 0.0625rem solid #eaecee;
+    box-shadow: 0 0 1.5rem 0.0625rem #17202a10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+#console > .logo {
+    border-bottom: 0.0625rem solid #eaecee;
+    padding: 1.25rem 1.5rem;
+    background-color: #19254d;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#console > .logo > .image {
+    height: 1.25rem;
+    filter: invert(1);
+}
+
+#console > .logo > .caption {
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-left: 1.6rem;
+    position: relative;
+}
+
+#console > .logo > .caption::before {
+    top: 50%;
+    left: -0.8rem;
+    width: 0.0625rem;
+    height: 1rem;
+    background-color: #abb2b9;
+    content: '';
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+#console > .location-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.5rem;
+
+    padding: 1rem 1.5rem;
+    border-bottom: 0.0625rem solid #eeeeee;
+}
+
+#console > .location-form > .label {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.375rem;
+}
+
+#console > .location-form > .label > .caption {
+    font-size: 0.825rem;
+    font-weight: 500;
+    color: #566573;
+}
+
+#console > .location-form > .label > .row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.25rem;
+}
+
+#console > .location-form > .label > .row > .button {
+    position: relative;
+}
+
+#console > .location-form > .label > .row > .button > .icon {
+    height: 1.125rem;
+    filter: opacity(0.5);
+    transition-duration: 125ms;
+    transition-property: top, opacity;
+    transition-timing-function: ease;
+}
+
+#console > .location-form > .label > .row > .button:hover > .icon {
+    filter: opacity(1);
+}
+
+#console > .location-form > .label > .row > .button > .tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    font-size: 0.8rem;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background-color: #19254d;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.425rem;
+    color: #ffffff;
+    pointer-events: none;
+    transition-duration: 125ms;
+    transition-property: top, opacity;
+    transition-timing-function: ease;
+    z-index: 1;
+    opacity: 0;
+}
+
+#console > .location-form > .label > .row > .button:hover > .tooltip {
+    top: calc(100% + 0.25rem);
+    filter: opacity(1);
+}
+
+#console > .estimate {
+    border-bottom: 0.0625rem solid #eeeeee;
+    padding: 1rem 1.5rem;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+#console > .estimate.visible {
+    display: flex;
+}
+
+#console > .estimate > .car {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+#console > .estimate > .car > .label {
+    border: 0.0625rem solid #e0e0e0;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#console > .estimate > .car > .label:has(> .radio:checked) {
+    outline: 0.125rem solid #17202a;
+}
+
+#console > .estimate > .car > .label > .radio {
+    display: none;
+}
+
+#console > .estimate > .car > .label > .icon {
+    width: 70%;
+    margin: -0.5rem 0;
+}
+
+#console > .estimate > .car > .label > .caption {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #424242;
+}
+
+#console > .estimate > .car > .label > .capacity {
+    color: #757575;
+    font-size: 0.85rem;
+}
+
+#console > .estimate > .text-container {
+    color: #757575;
+    font-size: 0.85rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#console > .estimate > .text-container > .text > .value {
+    color: #17202e;
+    font-weight: 600;
+}
+
+#console > .route {
+    flex-grow: 1;
+    list-style-type: none;
+    margin-inline: 0;
+    margin-block: 0;
+    padding-inline: 0;
+    overflow: hidden auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+#console > .route > .message {
+    flex-grow: 1;
+    line-height: 1.5;
+    color: #757575;
+    padding: 3.75rem;
+    text-align: center;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#console > .route > .message.visible {
+    display: flex;
+}
+
+#console > .route > .item {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.375rem;
+}
+
+#console > .route > .item:not(:last-child) {
+    border-bottom: 0.0625rem solid #eeeeee;
+}
+
+#console > .route > .item > .guidance {
+    color: #757575;
+    font-size: 0.85rem;
+}
+
+#console > .pay {
+    background-color: #17202a;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 1.25rem;
+    text-align: center;
+    display: none;
+}
+
+#console > .pay.visible {
+    display: block;
+}

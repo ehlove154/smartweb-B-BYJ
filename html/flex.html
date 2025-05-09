@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex</title>
+    <style>
+        .container {
+            height: 12rem;
+            background-color: #f0e0d0;
+            display: flex;
+            flex-direction: row;
+            /*gap: 3rem;*/
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .container > .item {
+            background-color: #b0f0d0;
+            font-size: 3rem;
+        }
+        .container > b.item {
+            align-self: flex-start;
+            background-color: #5499c7;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="item">DIV</div>
+    <span class="item">SPAN</span>
+    <section class="item">SECTION</section>
+    <b class="item">B</b>
+    <nav class="item">NAV</nav>
+</div>
+</body>
+</html>

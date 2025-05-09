@@ -1,0 +1,69 @@
+@media screen and  (max-width: 100rem) {
+    body > #main > #menu-container {
+        width: 100vw;
+    }
+}
+
+@media screen and  (max-width: 80rem) {
+    body > #main > #menu-container {
+        width: 100vw;
+    }
+}
+
+@media screen and  (max-width: 60rem) {
+    body > #main > #menu-container {
+        width: 100vw;
+    }
+}
+
+@media screen and  (max-width: 40rem) {
+    body > #main > #menu-container {
+        width: 100vw;
+    }
+    body > #main > #menu-container > .main > .logo {
+        display: none;
+        cursor: none;
+    }
+    body > #main > #menu-container > .stretch {
+        display: none;
+    }
+}
+
+body > #main > #menu-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+    width: 100vw;
+
+    padding: 1rem 2rem;
+
+    /*background-color: darkgrey;*/
+    z-index: 99;
+
+    position: sticky;
+    top: 0;
+}
+
+body > #main > #menu-container > .main > .logo {
+    width: 5.5rem;
+    cursor: pointer;
+}
+
+body > #main > #menu-container > .stretch {
+    flex-grow: 1;
+}
+
+body > #main > #menu-container > .btn {
+    padding: 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+body > #main > #menu-container > .btn:hover,
+body > #main > #menu-container > .btn:focus {
+    color: #00caef;
+}

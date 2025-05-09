@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>주식</title>
+    <link rel="stylesheet" href="./assets/style/stock.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script defer src="./assets/scripts/stock.js"></script>
+</head>
+<body>
+<div class="loading">
+    <img src="./assets/image/loading.png" alt="" class="icon">
+    <span class="caption">잠시만 기다려 주세요.</span>
+</div>
+<div class="chart">
+    <div class="header">
+        <div class="title">차트</div>
+        <button name="close" type="button">&#x2715;</button>
+    </div>
+    <div class="body">
+        <div class="chart ohlc"></div>
+        <div class="chart volume"></div>
+    </div>
+</div>
+<header class="header">
+    <form class="search-form">
+        <label class="label">
+            <input autocomplete="off" class="input" maxlength="50" minlength="0" name="keyword" placeholder="Search"
+                   spellcheck="false" type="text">
+        </label>
+        <button class="button" type="submit">
+            <img src="./assets/image/header.search-form.button.png" alt="search" class="icon">
+        </button>
+    </form>
+    <div class="stretch"></div>
+    <button class="button" type="button" name="refresh">
+        <img src="./assets/image/header.refresh.png" alt="refresh" class="icon">
+        <span class="caption">다시 불러오기</span>
+    </button>
+</header>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">단축 코드</th>
+        <th scope="col">ISIN 코드</th>
+        <th scope="col">시장 구분</th>
+        <th scope="col">종목명</th>
+        <th scope="col">법인등록번호</th>
+        <th scope="col">법인명</th>
+        <th class="stretch" scope="col" role="none"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-code="${stock['srtnCd']}">
+        <th scope="row">A00020</th>
+        <td>맘모스빵</td>
+        <td>먹고싶당</td>
+        <td>존맛집을</td>
+        <td>찾고싶엉</td>
+        <td>어디있닝</td>
+        <td>
+            <div class="button-container">
+                <button class="button" type="button">재무재표</button>
+                <button class="button" type="button">차트</button>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

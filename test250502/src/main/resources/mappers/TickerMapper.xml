@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yjb.test250502.mappers.TickerMapper">
+    <insert id="insert"
+            useGeneratedKeys="true"
+            keyColumn="id"
+            keyProperty="id">
+        insert into `exam_0502`.`tickers` (`id`, `name`)
+        values (#{ticker.id}, #{ticker.name})
+
+    </insert>
+
+    <delete id="deleteById">
+        delete
+        from `exam_0502`.`tickers`
+        where `id` = #{id}
+        limit 1
+    </delete>
+
+    <select id="selectById" resultType="com.yjb.test250502.entities.TickerEntity">
+        select `id`   as `id`,
+               `name` as `name`
+        from `exam_0502`.`tickers`
+        where `id` = #{id}
+    </select>
+
+    <select id="selectAll" resultType="com.yjb.test250502.entities.TickerEntity">
+        select `id`   as `id`,
+               `name` as `name`
+        from `exam_0502`.`tickers`
+        order by `id` asc
+    </select>
+</mapper>

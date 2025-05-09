@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>티커 - TEST</title>
+    <link rel="stylesheet" href="/assets/styles/ticker.css">
+    <script defer src="/assets/scripts/ticker.js"></script>
+</head>
+<body>
+<form novalidate id="tickerForm">
+    <h1 class="title">티커 관리</h1>
+    <div class="ticker-container">
+        <div class="container">
+            <label>
+                <span>ID</span>
+                <input required autofocus type="text" maxlength="5" minlength="1" spellcheck="false" autocomplete="off" id="id" name="id">
+            </label>
+            <label>
+                <span>이름</span>
+                <input required autofocus type="text" maxlength="100" minlength="1" spellcheck="false" autocomplete="off" id="name" name="name">
+            </label>
+            <div class="button-container">
+                <button type="submit" class="button">등록하기</button>
+            </div>
+        </div>
+        <div class="registered">
+            <h4 class="title">등록된 티커</h4>
+            <table id="table">
+                <thead>
+                <tr>
+                    <th scope="col" class="th_id">ID</th>
+                    <th scope="col">이름</th>
+                    <th scope="col" class="th_action">동작</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- ticker list -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>

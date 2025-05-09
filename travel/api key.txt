@@ -1,0 +1,52 @@
+http://apis.data.go.kr/1360000/MidFcstInfoService/getMidFcst
+?serviceKey=${weatherApiKey}
+
+
+
+
+http://apis.data.go.kr/1360000/MidFcstInfoService/getMidFcst
+?serviceKey=HHNbHnGxswdYzf2oDjiFwz4jioDDIts%2FghRBfiM8TW8yXUbbnpgv%2BN7AaeOXEaUV%2F18BD8%2FkATlKRlIzrUAKPg%3D%3D
+&pageNo=1
+&numOfRows=10
+&dataType=JSON
+&stnld=108
+&tmFc=202503190600
+
+
+
+http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst
+?serviceKey=HHNbHnGxswdYzf2oDjiFwz4jioDDIts%2FghRBfiM8TW8yXUbbnpgv%2BN7AaeOXEaUV%2F18BD8%2FkATlKRlIzrUAKPg%3D%3D&numOfRows=10&pageNo=1
+&dataType=JSON&regId=11B00000&tmFc=202503190600
+
+11C20402
+11C20402
+
+
+
+http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=HHNbHnGxswdYzf2oDjiFwz4jioDDIts%2FghRBfiM8TW8yXUbbnpgv%2BN7AaeOXEaUV%2F18BD8%2FkATlKRlIzrUAKPg%3D%3D&numOfRows=10&pageNo=1&dataType=JSON&regId=11A00101&tmFc=202503190600
+
+
+
+http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=HHNbHnGxswdYzf2oDjiFwz4jioDDIts%2FghRBfiM8TW8yXUbbnpgv%2BN7AaeOXEaUV%2F18BD8%2FkATlKRlIzrUAKPg%3D%3D&numOfRows=10&pageNo=1&dataType=JSON&regId=11B10101&tmFc=202503190600
+
+http://dataservice.accuweather.com/forecasts/v1/daily/5day/${citykey}?apikey=UkLW1SGJofLchyllC9BgnmkAt4zmVkDQ&language=ko-kr
+
+
+
+
+서울  226081
+인천 224032
+대전 223352
+대구 223347
+울산 226451
+부산 222888
+광주 223627
+제주 224209
+경기도 223671
+강원도 223556
+충청북도 223117
+충청남도 223143
+전라북도 223078
+전라남도 224257
+경상북도 2330417
+경산남도 223804

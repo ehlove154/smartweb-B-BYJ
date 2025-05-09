@@ -1,0 +1,6 @@
+alt + ins : getter setter
+shift + f6 : rename
+alt + enter : 오류확인
+ctrl + i : implement method
+alt + 화살표 : 창이동
+ctrl + r : 단어 찾아 바꾸기 (사용시 A>A버튼 클릭)

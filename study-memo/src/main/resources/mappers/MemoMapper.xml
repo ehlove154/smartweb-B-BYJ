@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yjb.studymemo.mappers.MemoMapper">
+    <insert id="insert">
+        insert into `study_memo`.`memos` (`writer`, `content`)
+        values (#{writer}, #{content})
+    </insert>
+
+<!--  메서드 이름 = id  -->
+    <select id="selectAll" resultType="com.yjb.studymemo.entities.MemoEntity">
+        select `index`      as `index`,
+               `writer`     as `writer`,
+               `content`    as `content`,
+               `created_at` as `createdAt`
+        from `study_memo`.`memos`
+        order by `index` desc
+    </select>
+
+    <delete id="deleteByIndex">
+        delete
+        from `study_memo`.`memos`
+        where `index` = #{index}
+        limit 1 <!-- where까지의 조건이 참이더라도 delete를 실제로 수행할 레코드의 수를 1개로 제한(단, pk 상황에서만 사용) -->
+    </delete>
+</mapper>

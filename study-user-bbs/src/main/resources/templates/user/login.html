@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>로그인 - SUB</title>
+    <link rel="stylesheet" href="/assets/styles/common.css">
+    <link rel="stylesheet" href="/user/assets/styles/login.css">
+    <script src="/assets/scripts/common.js"></script>
+    <script defer src="/assets/scripts/dialog.js"></script>
+    <script defer src="/user/assets/scripts/login.js"></script>
+</head>
+<body>
+<form novalidate id="loginForm">
+    <h1 class="title">로그인</h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="loginEmail">이메일</label>
+            </th>
+            <th>
+                <div class="row">
+                    <input required autocomplete="off" class="-object-field" id="loginEmail" maxlength="50"
+                           minlength="8" name="email" spellcheck="false" type="email">
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="loginPassword">비밀번호</label>
+            </th>
+            <th>
+                <div class="row">
+                    <input required autocomplete="off" class="-object-field" id="loginPassword" maxlength="50"
+                           minlength="8" name="password" spellcheck="false" type="password">
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th role="none"></th>
+            <td>
+                <div class="row">
+                    <label class="-object-check">
+                        <input class="--input" type="checkbox" name="remember">
+                        <span class="--box"></span>
+                        <span class="--caption">이메일 저장</span>
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th role="none"></th>
+            <td>
+                <div class="row">
+                    <button class="-object-button --color-green" type="submit">로그인</button>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th role="none"></th>
+            <td>
+                <ul class="menu">
+                    <li class="item">
+                        아직 계정이 없으신가요?
+                        <a href="/user/register" class="link">회원가입</a>
+                    </li>
+                    <li class="item">
+                        계정 정보를 분실하셨나요?
+                        <a href="/user/recover" class="link">계정 찾기</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

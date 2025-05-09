@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cursor, pointer-events, user-select, z-index</title>
+    <style>
+.a {
+    width: 15rem;
+    height: 15rem;
+    background-color: #5499c7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.b{
+    width: 15rem;
+    height: 15rem;
+    background-color: #ec7063;
+    position: absolute;
+    top: 15rem;
+    left: 0;
+    z-index: 2;
+ }
+.c{
+    width: 7.5rem;
+    height: 7.5rem;
+    background-color: #58d68d;
+    position: absolute;
+    z-index: 3;
+    top: 10rem;
+}
+    </style>
+</head>
+<body>
+<div class="a">
+    <div class="c"></div>
+</div>
+<div class="b"></div>
+</body>
+</html>

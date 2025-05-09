@@ -1,0 +1,281 @@
+@media screen and  (max-width: 100rem) {
+    #main > #about {
+        width: 100vw;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: keep-all;
+    }
+    #main > #about > .intro > .introduce {
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: keep-all;
+    }
+}
+
+@media screen and  (max-width: 80rem) {
+    #main > #about {
+        width: 100vw;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: keep-all;
+    }
+    #main > #about > .intro > .introduce {
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: keep-all;
+    }
+}
+
+@media screen and  (max-width: 60rem) {
+    #main > #about {
+        width: 100vw;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: keep-all;
+    }
+    #main > #about > .intro > .introduce {
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: keep-all;
+        text-align: center;
+    }
+}
+
+@media screen and  (max-width: 40rem) {
+    #main > #about {
+        width: 100vw;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: keep-all;
+    }
+    #main > #about > .intro > .introduce {
+        width: 100%;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: keep-all;
+        text-align: center;
+    }
+}
+
+#main > #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    margin: -5rem 2rem;
+}
+
+#main > #about > .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+
+    box-sizing: border-box;
+    margin-bottom: 10rem;
+
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+#main > #about > .intro > .name {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 100%;
+
+    text-align: center;
+    cursor: text;
+
+    font-family: "Black Han Sans", sans-serif;
+}
+
+#main > #about > .intro > .name > .txt {
+    display: none;
+}
+
+#main > #about > .intro > .name > #name1 {
+    white-space: pre;
+    color: #000000;
+}
+
+#main > #about > .intro > .name > .name-txt1 {
+    font-size: 2.5rem;
+    color: #4b4b4b;
+}
+
+#main > #about > .intro > .name > .name-txt1::after {
+    border-right: 0.2rem solid #000000;
+    animation: blink-1 0.7s infinite alternate;
+    content: '';
+    display: inline-block;
+    margin-left: 0.2rem;
+    height: 2.5rem;
+    position: relative;
+}
+
+@keyframes blink-1 {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#main > #about > .intro > .name > #name2 {
+    white-space: pre;
+    color: #000000;
+}
+
+#main > #about > .intro > .name > .name-txt2 {
+    font-size: 5rem;
+}
+
+#main > #about > .intro > .name > .name-txt2::after {
+    border-right: 0.2rem solid #000000;
+    animation: blink-2 0.7s infinite alternate;
+    content: '';
+    display: inline-block;
+    margin-left: 0.2rem;
+    height: 5rem;
+    position: relative;
+}
+
+@keyframes blink-2 {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#main > #about > .intro > .introduce {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+    width: 50rem;
+    padding: 1rem;
+    margin: 2rem;
+    line-height: 1.7rem;
+    left: 0;
+    word-break: keep-all;
+
+    font-size: 1rem;
+    color: #4b4b4b;
+
+    opacity: 0;
+    animation-name: opacity;
+    animation-delay: 7500ms;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#main > #about > .intro > .introduce.visible {
+    opacity: 1;
+}
+
+#main > #about > .education {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+
+    margin: 10rem 0;
+}
+
+#main > #about > .education > .center {
+    border: 0.1rem solid #000000;
+    height: 100vh;
+    position: relative;
+}
+
+#main > #about > .education > .list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1.1rem;
+}
+
+#main > #about > .education > .list > .item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    position: relative;
+}
+
+#main > #about > .education > .list > .item.left {
+    text-align: right;
+    left: calc(-50% - 2rem);
+}
+
+#main > #about > .education > .list > .item.right {
+    text-align: left;
+    right: calc(-50% - 2rem);
+}
+
+#main > #about > .education > .list > .item > .point {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #000000;
+    border-radius: 9999rem;
+    position: relative;
+}
+
+#main > #about > .education > .list > .item.left > .point {
+    left: calc(100% + 1.75rem);
+    top: 4rem;
+}
+
+#main > #about > .education > .list > .item.right > .point {
+    right: 2.2rem;
+    top: 4rem;
+}
+
+#main > #about > .education > .list > .item > .since {
+    color: #828282;
+    font-size: 0.75rem;
+    line-height: 2rem;
+}
+
+#main > #about > .education > .list > .item > .caption {
+    font-size: 0.915rem;
+    font-weight: 500;
+    line-height: 1.125rem;
+}

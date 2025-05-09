@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Memo</title>
+    <script defer src="/assets/scripts/index.js"></script>
+</head>
+<body>
+<form novalidate id="memoForm">
+    <label>
+        <span>작성자</span>
+        <input required autocomplete="off" maxlength="10" minlength="2" name="writer" placeholder="영어 대소문자, 완성 한글 2~10자" spellcheck="false" type="text">
+    </label>
+    <br>
+    <label>
+        <span>내용</span>
+        <input required autocomplete="off" maxlength="100" minlength="1" name="content" placeholder="1~100자" spellcheck="false" type="text">
+    </label>
+    <br>
+    <button type="submit">작성</button>
+</form>
+<table border="1" id="memoTable">
+    <thead>
+    <tr>
+        <th scope="col">번호</th>
+        <th scope="col">작성자</th>
+        <th scope="col">내용</th>
+        <th scope="col">날짜</th>
+        <th scope="col">시간</th>
+        <th scope="col">동작</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+</body>
+</html>

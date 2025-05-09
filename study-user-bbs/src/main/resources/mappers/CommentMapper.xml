@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yjb.studyuserbbs.mappers.CommentMapper">
+    <insert id="insert"
+    useGeneratedKeys="true"
+    keyColumn="index"
+    keyProperty="index">
+        insert into `study_user_bbs`.`comments` (`user_email`, `article_index`, `content`, `comment_index`, `created_at`, `is_deleted`) VALUES (#{comment.userEmail}, #{comment.articleIndex}, #{comment.content}, #{comment.commentIndex}, #{comment.createAt}, #{comment.isDeleted})
+    </insert>
+
+    <update id="update">
+        update `study_user_bbs`.`comments`
+        set `user_email` = #{comment.userEmail},
+            `article_index` = #{comment.articleIndex},
+            `content` = #{comment.content},
+            `comment_index` = #{comment.commentIndex},
+            `created_at` = #{comment.createAt},
+            `is_deleted` = #{comment.isDeleted}
+        where `index` = #{comment.index}
+        limit 1
+    </update>
+
+    <select id="selectByIndex" resultType="com.yjb.studyuserbbs.entities.CommentEntity">
+        select `index` as `index`,
+               `user_email` as `userEmail`,
+               `article_index` as `articleIndex`,
+               `content` as `content`,
+               `comment_index` as `commentIndex`,
+               `created_at` as `createdAt`,
+               `is_deleted` as `isDeleted`
+        from `study_user_bbs`.`comments`
+        where `index` = #{index}
+        limit 1
+    </select>
+
+    <select id="selectByArticleIndex" resultType="com.yjb.studyuserbbs.entities.CommentEntity">
+        select `index` as `index`,
+               `user_email` as `userEmail`,
+               `article_index` as `articleIndex`,
+               `content` as `content`,
+               `comment_index` as `commentIndex`,
+               `created_at` as `createdAt`,
+               `is_deleted` as `isDeleted`
+        from `study_user_bbs`.`comments`
+        where `article_index` = #{articleIndex}
+        limit 1
+    </select>
+</mapper>

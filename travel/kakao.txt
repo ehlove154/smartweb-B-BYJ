@@ -1,0 +1,5 @@
+https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=HHNbHnGxswdYzf2oDjiFwz4jioDDIts%2FghRBfiM8TW8yXUbbnpgv%2BN7AaeOXEaUV%2F18BD8%2FkATlKRlIzrUAKPg%3D%3D&numOfRows=10&pageNo=1&dataType=JSON&base_date=250324&base_time=0500&nx=60&ny=127
+
+https://dapi.kakao.com/v2/local/search/keyword.json?query=60,120 AT4
+
+https://apis.map.kakao.com/web/sample/categoryFromBounds/

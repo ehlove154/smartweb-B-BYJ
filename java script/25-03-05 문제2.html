@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /* 매개 변수로 nums를 전달 받아 이가 가지는 인자 중 가장 큰 수를 반환하는 함수 findMax를 만드세요. 단, nums는 -1억이상 1억이하 범위의 실수를 1개 이상 인자로 가지는 배열이고 이외 범위의 수는 고려하지 않습니다. */
+
+        let nums = [];
+
+        function findMax(nums) { // [3,5,7]
+            let result = nums[0]; // 3
+            for (let num of nums) {
+                if (result < num) {
+                    result = num;
+                    return result;
+                } else if (result > num){
+                    return result;
+                }
+                console.log(`${result}`);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

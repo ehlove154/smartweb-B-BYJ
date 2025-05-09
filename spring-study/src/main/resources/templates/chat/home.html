@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>(반)채팅</title>
+    <script defer src="/chat/assets/scripts/home.js"></script>
+</head>
+<body>
+<div id="history">
+    <button name="refresh" type="button">다시 불러오기</button>
+    <ul class="list">
+    </ul>
+</div>
+<form id="messageForm">
+    <label>
+        메세지
+        <input required minlength="1" maxlength="100" name="message" type="text">
+    </label>
+    <button type="submit">보내기</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TAZA - 택시 호출</title>
+    <link rel="icon" href="./assets/images/logo_app.png" type="image/png">
+    <link rel="stylesheet" href="./assets/styles/common.css" type="text/css">
+    <link rel="stylesheet" href="./assets/styles/index.css" type="text/css">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ba863ba8034f3a1f63c3cc6cc02ae1ba&libraries=services"></script>
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+    <script defer src="./assets/scripts/index.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="addressDialog">
+    <div class="content">
+        content
+    </div>
+</div>
+<div id="dialogCover"></div>
+<div id="dialog">
+    <div class="content"></div>
+    <button class="ok" type="button">확인</button>
+</div>
+<div id="payDialog">
+    <div class="content">
+        <h2 class="title">택시 호출</h2>
+        <span class="message">아래 정보를 확인해 주세요.</span>
+        <ul class="spec">
+            <li class="item">
+                출발지
+                <span class="value depart">남계7길 2</span>
+            </li>
+            <li class="item">
+                도착지
+                <span class="value destination">중보광로 45</span>
+            </li>
+            <li class="item">
+                차량 유형
+                <span class="value car-type">Basic</span>
+            </li>
+            <li class="item">
+                결제 요금
+                <span class="value charge">10,000원</span>
+            </li>
+        </ul>
+        <span class="message small">택시를 호출할 경우 위 요금이 결제되며, 실제 요금이 위 결제 요금보다 더 청구될 경우 추가로 결제되고 덜 청구될 경우 차액은 환불됩니다.</span>
+        <div class="button-container">
+            <button class="button cancel obj-button" type="button">취소</button>
+            <button class="button confirm obj-button prop-color-highlight" type="button">호출</button>
+        </div>
+
+    </div>
+</div>
+<div id="historyDialog">
+    <div class="content">
+        <h2 class="title">호출 내역</h2>
+        <ul class="list">
+            <li class="message empty">호출 내역이 없습니다.</li>
+<!--            <li class="item">-->
+<!--                <span class="timestamp">2025-03-14 11:12:03</span>-->
+<!--                <span class="detail">-->
+<!--                    <span class="depart">경북 칠곡군 약목면 남계7길 2</span>-->
+<!--                    <span class="arrow">&#x2192;</span> &lt;!&ndash; 오른쪽 화살표 &ndash;&gt;-->
+<!--                    <span class="destination">경남 거창군 중보광길 45</span>-->
+<!--                    <span class="stretch"></span>-->
+<!--                    <span class="charge">10,000원</span>-->
+<!--                </span>-->
+<!--            </li>-->
+        </ul>
+        <div class="button-container">
+            <button class="obj-button close" type="button">닫기</button>
+        </div>
+    </div>
+</div>
+<nav id="nav">
+    <button class="obj-button prop-color-highlight history" type="button">호출 내역</button>
+</nav>
+<div id="console">
+    <div class="logo"> <!-- 로고 -->
+        <img src="./assets/images/logo_cut.png" alt="" class="image">
+        <span class="caption">택시호출</span>
+    </div>
+    <form novalidate class="location-form"> <!-- 출도착지 주소 -->
+        <label class="label address">
+            <span class="caption">출발지</span> <!-- 출발지 -->
+            <span class="row">
+                <input readonly required autocomplete="off" class="obj-input input address" minlength="10"
+                       maxlength="250" name="addressDepart" type="text">
+                <button class="obj-button button" name="findDepart" type="button">
+                    <img src="./assets/images/index/console.location-form.find-depart.png" alt="" class="icon">
+                    <span class="tooltip">주소 찾기</span>
+                </button>
+                <button class="obj-button button" name="detectDepart" type="button">
+                    <img src="./assets/images/index/console.location-form.detect-depart.png" alt="" class="icon">
+                    <span class="tooltip">현재 위치</span>
+                </button>
+            </span>
+        </label>
+        <label class="label address">
+            <span class="caption">도착지</span> <!-- 도착지 -->
+            <span class="row">
+                <input readonly required autocomplete="off" class="obj-input input address" minlength="10"
+                       maxlength="250" name="addressDestination" type="text">
+                <button class="obj-button button" name="findDestination" type="button">
+                    <img src="./assets/images/index/console.location-form.find-depart.png" alt="" class="icon">
+                    <span class="tooltip">주소 찾기</span>
+                </button>
+                <button class="obj-button button" name="detectDestination" type="button">
+                    <img src="./assets/images/index/console.location-form.detect-depart.png" alt="" class="icon">
+                    <span class="tooltip">도착 위치</span>
+                </button>
+            </span>
+        </label>
+        <button class="obj-button prop-color-highlight" type="submit">경로 찾기</button>
+    </form>
+    <div class="estimate">
+        <form class="car">
+            <label class="label">
+                <input checked name="type" type="radio" class="radio" value="basic">
+                <img src="./assets/images/index/console.estimate.basic.png" alt="" class="icon">
+                <span class="caption">Basic</span>
+                <span class="capacity">1-4</span>
+            </label>
+            <label class="label">
+                <input name="type" type="radio" class="radio" value="premium">
+                <img src="./assets/images/index/console.estimate.premium.png" alt="" class="icon">
+                <span class="caption">Premium</span>
+                <span class="capacity">1-3</span>
+            </label>
+            <label class="label">
+                <input name="type" type="radio" class="radio" value="suv">
+                <img src="./assets/images/index/console.estimate.suv.png" alt="" class="icon">
+                <span class="caption">Suv</span>
+                <span class="capacity">1-7</span>
+            </label>
+        </form>
+        <span class="text-container">
+            <span class="text">
+                예상 소요 시간
+                <span class="value duration">10분</span>
+            </span>
+            <span class="text">
+                예상 요금 시간
+                <span class="value charge">10,000원</span>
+            </span>
+        </span>
+    </div>
+    <ul class="route">
+        <li class="message empty visible">먼저, 출발지와 도착지를 설정하여 [경로 찾기] 버튼을 클릭해 주세요.</li>
+<!--        <li class="item">-->
+<!--            <span class="name">수성구청</span>-->
+<!--            <span class="guidance">범어네거리 성주 방면으로 유턴</span>-->
+<!--        </li>-->
+    </ul>
+    <button class="pay" type="button">10,000원 결제하기</button>
+</div>
+<div id="map"></div>
+</body>
+</html>

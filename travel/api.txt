@@ -1,0 +1,16 @@
+http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0
+?serviceKey=HHNbHnGxswdYzf2oDjiFwz4jioDDIts%2FghRBfiM8TW8yXUbbnpgv%2BN7AaeOXEaUV%2F18BD8%2FkATlKRlIzrUAKPg%3D%3D
+&pageNo=1
+&numOfRows=1000
+&dataType=JSON
+&base_date=20210628
+&base_time=0500
+&nx=55
+&ny=127
+
+
+http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey=HHNbHnGxswdYzf2oDjiFwz4jioDDIts%2FghRBfiM8TW8yXUbbnpgv%2BN7AaeOXEaUV%2F18BD8%2FkATlKRlIzrUAKPg%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=20250316&base_time=0500&nx=89&ny=90
+
+[`response`][`body`][`items`][`item`]
+
+http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=HHNbHnGxswdYzf2oDjiFwz4jioDDIts%2FghRBfiM8TW8yXUbbnpgv%2BN7AaeOXEaUV%2F18BD8%2FkATlKRlIzrUAKPg%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=${beginBasDt}&base_time=0500&nx=89&ny=90

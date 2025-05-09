@@ -1,0 +1,160 @@
+#main > #weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    position: relative;
+    gap: 3rem;
+
+    width: 35%;
+    height: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    margin: 3.5rem 0 3.5rem 4rem;
+
+    /*border-right: 0.0625rem solid #fc7b74;*/
+
+    /*background-color: #e6e6e6;*/
+}
+
+#main > #weather-container > .weather-now {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    box-sizing: border-box;
+    gap: 1rem;
+
+    border-radius: 3rem;
+
+    background-color: #e6e6e650;
+}
+
+#main > #weather-container > .weather-now > .title {
+    top: 0;
+    left: 0;
+
+    padding: 1rem 2rem 2rem 2rem;
+    font-size: 3rem;
+    margin: 0;
+
+
+    /*background-color: #74c8fc;*/
+}
+
+#main > #weather-container > .weather-now > .list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1rem;
+    margin-inline: 0;
+    margin-block: 0;
+    padding-inline: 0;
+}
+
+#main > #weather-container > .weather-now > .list > .item {
+    text-align: center;
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3rem;
+    font-size: 1.5rem;
+}
+
+#main > #weather-container > .weather-now > .list > .item > .icon {
+    width: 8rem;
+    aspect-ratio: 1/1;
+    left: -1.85rem;
+    position: relative;
+
+}
+
+#main > #weather-container > .weather-now > .list > .item > .content.tmp {
+    font-size: 4rem;
+    font-weight: 500;
+    position: absolute;
+    top: 3rem;
+    right: 1.5rem;
+}
+
+#main > #weather-container > .weather-week {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    background-color: #e6e6e650;
+
+    border-radius: 3rem;
+}
+
+#main > #weather-container > .weather-week > .title {
+    margin-left: -10rem;
+    color: #7d7d7d;
+    /*margin-bottom: -0.3rem;*/
+}
+
+#main > #weather-container > .weather-week > .list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1rem;
+
+
+    padding: 0 3rem;
+    box-sizing: border-box;
+    width: 25rem;
+}
+
+#main > #weather-container > .weather-week > .list > li > .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+#main > #weather-container > .weather-week > .list > li > .item > .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem;
+
+    width: 2.081rem;
+    box-sizing: border-box;
+
+    font-size: 0.7rem;
+}
+
+#main > #weather-container > .weather-week > .list > li > .item > .content > .date {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#main > #weather-container > .weather-week > .list > li > .item > .content > .icon {
+    width: 2rem;
+}
+
+#main > #weather-container > .weather-week > .list > li > .item > .content.low {
+    font-size: 0.95rem;
+    color: #74c8fc;
+    white-space: nowrap;
+}
+
+#main > #weather-container > .weather-week > .list >  li > .item > .content.high {
+    font-size: 0.95rem;
+    color: #fc7b74;
+    white-space: nowrap;
+}

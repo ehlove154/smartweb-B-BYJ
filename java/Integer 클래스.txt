@@ -1,0 +1,30 @@
+Integer 클래스
+-java.lang.Integer 클래스는 일반 정수(int)와 관련된 편의 기능을 제공하고, 해당 타입 자체가 int 타입의 리터럴로 작동할 수 있는 일반 정수(int)의 래퍼(wrapper) 클래스
+-Integer 클래스가 가지는 실질적인 값은 int와 동일하나, 이는 참조 타입임으로 null을 할당할 수 있다
+
+-----------------------------------------------------------
+
+정적 멤버 변수
+-MAX_VALUE : int 타입이 가질 수 있는 가장 큰 값
+-MIN_VALUE : int 타입이 가질 수 있는 가장 작은 값
+
+-----------------------------------------------------------
+
+정적 메서드
+-parseInt(String s) : 전달된 문자열 s를 일반 정수(int)로 변환하여 반환. 변환 할 수 없는 문자열일 경우 NumberFormatException 예외가 발생
+-parseInt(String s, int redix) : redix 진법의 문자열 s를 10진법으로 변환한 int를 반환
+-toBinaryString(int i) : 정수 i를 2진법으로 변환한 문자열을 반환
+-toHexString(int i) : 정수 i를 16진법으로 변환한 문자열을 반환
+-toOctalString(int i) : 정수 i를 8진법으로 변환한 문자열을 반환
+-toString(int i) : 정수 i를 문자열로 변환하여 반환
+
+-----------------------------------------------------------
+
+객체 메서드
+-byteValue( ) : 호출 대상이 가진 일반 int 값을 byte 타입으로 변환하여 반환. 오버/언더플로우가 발생할 수 있음
+-shortValue( ) : 호출 대상이 가진 일반 int 값을 short 타입으로 변환하여 반환. 오버/언더플로우가 발생할 수 있음
+-intValue( ) : 호출 대상이 가진 일반 int 값을 반환. 자동 언박싱(Auto Unboxing)을 지원함으로 int타입의 변수에 해당객체를 할당하여도 해당 메서드가 실행된다. 해당 객체가 null이라면 NullPointerException이 발생
+-longValue( ) : 호출 대상이 가진 일반 int 값을 long 타입으로 변환하여 반환
+-floatValue( ) : 호출 대상이 가진 일반 int 값을 float 타입으로 변환하여 반환
+-doubleValue( ) : 호출 대상이 가진 일반 int 값을 double 타입으로 변환하여 반환
+-toString( ) : 호출 대상이 가진 int 값을 문자열로 변환하여 반환

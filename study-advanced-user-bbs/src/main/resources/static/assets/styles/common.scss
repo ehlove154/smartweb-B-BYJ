@@ -1,0 +1,125 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+@import "./object/field";
+@import "./object/button";
+@import "./object/check";
+@import "./object/label";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 100%;
+  background-color: #fafcfe;
+  color: #212325;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  margin: initial;
+  cursor: default;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: inherit;
+  margin-block: initial;
+  margin-inline: initial;
+}
+
+html {
+  height: 100%;
+}
+
+button, input, select, textarea {
+  background-color: initial;
+  border: initial;
+  color: inherit;
+  font: inherit;
+  margin: initial;
+  margin-block: initial;
+  margin-inline: initial;
+  letter-spacing: initial;
+  outline: initial;
+  padding: initial;
+  padding-block: initial;
+  padding-inline: initial;
+  text-indent: initial;
+  text-shadow: initial;
+  text-transform: initial;
+  word-spacing: initial;
+}
+
+a[href] {
+  color: inherit;
+  text-decoration: none;
+}
+
+ol, ul {
+  list-style: none;
+  margin-block: initial;
+  padding-inline: initial;
+}
+
+.--dialog {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0.5rem);
+  background-color: #212325e0;
+  position: fixed;
+  z-index: 8;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: 175ms;
+  transition-property: opacity;
+  transition-timing-function: ease;
+
+  &.-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  > .---modal {
+    @include flex(column, stretch, flex-start, 1rem);
+    top: 50%;
+    left: 50%;
+    min-width: 20rem;
+    background-color: #fafcfe;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1.25rem #212325e0;
+    overflow: hidden;
+    position: fixed;
+    padding: 1.25rem 1.5rem;
+    transform: scale(90.75%) translate(-50%, -50%);
+    transition-duration: 175ms;
+    transition-property: opacity, transform;
+    transition-timing-function: ease;
+    opacity: 0;
+    pointer-events: none;
+
+    &.-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(100%) translate(-50%, -50%);
+    }
+
+    > .---title {
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    > .---content {
+      text-align: justify;
+    }
+
+    > .---button-container {
+      @include flex(row, stretch, center, 0.5rem);
+    }
+  }
+}
+
+body:has(.--dialog.-visible) {
+  overflow: hidden !important;
+}
+

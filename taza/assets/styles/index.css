@@ -1,0 +1,32 @@
+@import "./index/console.css";
+@import "./index/map.css";
+@import "./index/addressdialog.css";
+@import "./index/paydialog.css";
+@import "./index/dialog.css";
+@import "./index/history-dialog.css";
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+#nav {
+    top: 1rem;
+    right: 1rem;
+    position: fixed;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}

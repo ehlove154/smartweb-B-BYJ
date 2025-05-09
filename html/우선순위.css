@@ -1,0 +1,11 @@
+*:active{
+    color: mediumpurple;
+}
+
+span { /*우선순위 1점*/
+    color: red;
+}
+
+* { /*우선순위 0점. but if use the '!important', revers with span*/
+    color: dodgerblue;
+}

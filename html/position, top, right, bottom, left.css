@@ -1,0 +1,24 @@
+.box1{
+    /*top: 5rem;*/
+    /*left: 5rem;*/
+    width: 10rem;
+    height: 10rem;
+    background-color: lightsalmon;
+    position: relative;
+}
+
+.box2{
+    width: 10rem;
+    height: 10rem;
+    background-color: lemonchiffon;
+    position: relative;
+}
+
+.box3{
+    right: 0;
+    bottom: 0;
+    width: 5rem;
+    height: 5rem;
+    background-color: palegreen;
+    position: absolute;
+}

@@ -1,0 +1,134 @@
+#historyDialog {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #17202aa0;
+    position: fixed;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: 125ms;
+    transition-property: opacity;
+}
+
+#historyDialog.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#historyDialog > .content {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: scale(97.5%) translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    min-width: 25rem;
+    max-width: calc(100% - 2rem);
+    max-height: calc(100% - 2rem);
+
+    transition-duration: 125ms;
+    transition-property: transform;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+#historyDialog.visible > .content {
+    transform: scale(100%) translate(-50%, -50%);
+}
+
+#historyDialog > .content > .title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 1.25rem 1.5rem;
+    margin-inside: 0;
+    margin-block: 0;
+    border-bottom: 0.0625rem solid #eeeeee;
+}
+
+#historyDialog > .content > .list {
+    list-style-type: none;
+    margin-inside: 0;
+    margin-block: 0;
+    padding-inline: 0;
+    padding: 0.75rem 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.375rem;
+
+    overflow: hidden auto;
+}
+
+#historyDialog > .content > .list > .message {
+    color: #757575;
+    padding: 3rem 0;
+    text-align: center;
+    display: none;
+}
+
+#historyDialog > .content > .list > .message.visible {
+    display: block;
+}
+
+#historyDialog > .content > .list > .item {
+    background-color: #eeeeee;
+    border-radius: 0.5rem;
+    padding: 0.75rem 0.875rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.25rem;
+}
+
+#historyDialog > .content > .list > .item > .timestamp {
+    font-size: 0.75rem;
+    color: #757575;
+}
+
+#historyDialog > .content > .list > .item > .detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.375rem;
+    white-space: nowrap;
+}
+
+#historyDialog > .content > .list > .item > .detail > .arrow {
+    font-size: 1.25rem;
+    color: #757575;
+    margin: 0 0.5rem;
+}
+
+#historyDialog > .content > .list > .item > .detail > .stretch {
+    min-width: 2rem;
+    flex-grow: 1;
+}
+
+#historyDialog > .content > .list > .item > .detail > .charge {
+    background-color: #19254d;
+    color: #ffffff;
+    font-size: 0.85rem;
+    padding: 0.375rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+#historyDialog > .content > .button-container {
+    border-top: 0.0625rem solid #eeeeee;
+    padding: 0.7rem 1rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-end;
+}
+

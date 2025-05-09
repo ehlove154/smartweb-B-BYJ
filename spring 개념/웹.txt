@@ -1,0 +1,26 @@
+MVC
+-MVC(Model-View-Controller) 패턴은 웹 개발 및 프로그램 개발 시에 사용하는 개발 패턴 중 하나이다.
+-원활한 협업 및 향후의 유지관리, 보수를 용이하게 하기 위해 MVC 패턴을 지키면서 개발하는 것이 매우 중요
+
+>Controller
+-MVC 패턴에서 실질적으로 사용자(클라이언트)의 요청(Request)을 받아 응답(Response)을 되돌려주는 앤드포인트(끝단, End-Point) 역할을 하는 클래스
+-요청을 받을 수 있는 주소(경로)에 대한 Mapping된 메서드를 가지고 있다.
+-요청에서 전달 받은 인자에 대한 유효성 검사 등의 로직을 직접 구현하여서는 안 된다.
+-데이터베이스에 접속하기 위한 로직을 구현하서나, DAO(Data Access Object) 혹은 Mapper를 의존성으로 가져서는 안 된다.
+
+>Model
+>>Service
+-MVC패턴에서 Controller가 넘겨준 인자에 대한 유효성 검사를 실시한다.
+-그 외 대체적인 로직을 구현하고, Controller와 DAO(Data Access Object) 혹은 Mapper간의 연결고리 역할을 한다.
+
+>>DAO(Data Access Object)
+-MVC패턴에서 데이터베이스에 직접적으로 접근할 수 있는 유일한 구성요소이다.
+-서비스의 요청에 따른 쿼리(SQL) 실행 결과를 돌려준다.
+-영속성 프레임워크(PF, Persistence Framework)의 종류에 따라 DAO, Repository, Mapper 등의 접미어를 가진다.
+
+>View
+-MVC패턴에서 사용자에게 보여질 화면을 구현하는 부분. 주로 동적인 HTML 표현을 위해 많이 사용
+-스프링 부트에서 뷰를 처리하기 위한 템플릿 엔진의 종류가 많은데 대표적인 예는 아래와 같다
+	* JSP
+	* Thymeleaf
+	* FreeMarker

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crypto - Utils</title>
+    <link rel="stylesheet" href="/test/assets/styles/crypto.css" type="text/css">
+    <script defer src="/test/assets/scripts/crypto.js"></script>
+</head>
+<body>
+<form method="post" id="utilForm" novalidate>
+    <h1 class="title">Crypto-Utils</h1>
+    <div class="container">
+        <div class="container">
+            <label>
+                <span class="caption">암호화 방식</span>
+                <select name="op" id="option">
+                    <option value="sha1">SHA-1</option>
+                    <option value="sha512">SHA-512</option>
+                    <option value="sha256">SHA-256</option>
+                </select>
+            </label>
+            <label>
+                <span class="caption">평문</span>
+                <input required autofocus spellcheck="false" autocomplete="off" type="text" name="plaintext" id="plaintext">
+            </label>
+            <button type="submit" class="submit">암호화 요청</button>
+        </div>
+        <div class="container">
+            <input class="check" type="checkbox" id="check" name="check">
+            <span class="caption">대문자로 반환받기</span>
+        </div>
+        <div class="resultContainer">
+            <span class="caption">결과</span>
+            <textarea readonly name="result" id="result"></textarea>
+        </div>
+    </div>
+</form>
+</body>
+</html>

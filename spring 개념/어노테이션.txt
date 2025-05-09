@@ -1,0 +1,38 @@
+어노테이션
+-Annotation 자바에서 특정 대상(클래스, 메서드, 변수 등)의 상태나 속성을 부여하기 위해 사용한다.
+-@Controller (클래스) : 해당 클래스가 스프링 MVC 패턴의 컨트롤러임을 알린다.
+-@RequestMapping (클래스, 메서드) : 요청을 받아들일 경로 맵핑을 지정.
+	* 해당 어노테이션이 클래스에 부여되어 있을 경우 클래스가 가지는 모든 메서드의 맵핑의 경로에 대한 접두어로 동작
+	* 해당 어노테이션이 메서드에 부여되어 있을 경우 맵핑된 뎡로로 요청이 발생했을 때 해당 메서드를 실현하게 된다.
+	* @Controller 혹은 @RequestController 어노테이션과 함께 사용하였을 때 유의미
+	* 속성
+	     -method : 해당 맵핑이 받아들일 요청방식(Method)을 RequsetMethod(org.springframework.web.bind.annotation.RequestMethod)가 가지는 멤버로 지정
+	     -produces : 해당 맵핑에 대한 요청의 응답 결과호 반환될 Content-Type을 MediaType (org.springframework.http.MediaType)가지는 멤버로 지정
+	     -value : 해당 맵핑의 경로를 문자열로 지정
+-@ResponseBody (메서드) : 해당 메서드의 반환 타입이 문자열(String)일때 탬플릿을 뷰로 처리하는 것이 아닌 문자열 그대로가 응답으로 반환되어야 함을 지정
+	* 반환 타입이 문자열일때 뿐만 아니라 응답 결과가 클라이언트에게 그대로 전달되어야 할때 해당 어노테이션을 부여
+-@RequestParam (매개 변수) : 클라이언트가 요청과 함께 보낸 데이터를 매개 변수에 할당하기 위해 사용
+	* 속성
+	     -value : 클라이언트가 전달하는 변수의 이름을 지정. 대표적인 예로 <input> 태그의 name 속성 값과 일치해야 한다
+	     -defaultValue : 클라이언트가 해당 변수의 값을 누락하였을때 사용할 기본 값을 문자열로 지정
+	     -required : 해당 매개 변수에 할당하는 데이터가 반드시 있어야 하는가의 여부를 지정. 기본 값은 true이, true 일때에는 해당 매개 변수가 누락될 경우 400(Bad request) 오류가 발생
+-@Service (클래스) : 해당 클래스가 스프링 MVC 패턴의 서비스임을 알린다.
+
+------------------------------------------
+
+MyBatis
+-@Mapper (인터페이스) : 해당 인터페이스가 MyBatis Mapper임을 알린다.
+-@Param (매개 변수) :  MyBatis Mapper XML에 전달할 매개 변수의 식별자를 지정
+	* 속성
+	    - value : 식별자 지정
+
+------------------------------------------
+
+Lombok
+-@AllArgsConstructor (클래스) : 모든 맴버 변수를 매개 변수로 가지는 생성자를 가지게 한다.
+-@NoArgsConstructor (클래스) : 매개 변수를 가지지 않는 생성자를 가지게 한다.
+-@Getter (클래스) :  모든 멤버 변수에 대한 Getter 메서드를 가지게 한다.
+-@Setter (클래스) :  모든 멤버 변수에 대한 Setter 메서드를 가지게 한다.
+-@EqualsAndHashCode (클래스) : 멤버 변수에 대해 equals 및 hashCode 메서드를 재정의하게 한다.
+	* 속성
+	    - of : 재정의 대상이 되는 멤버 변수의 이름을 문자열 배열로 지정한다.

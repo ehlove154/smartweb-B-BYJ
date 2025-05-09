@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>로그인</title>
+</head>
+<body>
+<form id="loginForm" method="post">
+    <label>
+        <span>아이디</span>
+        <br>
+        <input autofocus required autocomplete="off" maxlength="15" minlength="6" name="id" spellcheck="false" type="text">
+    </label>
+    <br>
+    <label>
+        <span>비밀번호</span>
+        <br>
+        <input required autocomplete="off" maxlength="25" minlength="6" name="password" spellcheck="false" type="password">
+    </label>
+    <br>
+    <button type="submit">로그인</button>
+</form>
+<div th:if="${result != null}">
+    <span th:switch="${result}">
+        <span th:case="'FAILURE_COMBINATION'">아이디 혹은 비밀번호가 올바르지 않습니다.</span>
+        <span th:case="'FAILURE_INVALID_ID'">올바르지 않은 아이디 규격입니다.</span>
+        <span th:case="'FAILURE_INVALID_PASSWORD'">올바르지 않은 비밀번호 규격입니다.</span>
+        <span th:case="'SUCCESS'">로그인 성공</span>
+    </span>
+</div>
+</body>
+</html>
+
+<!--
+1. html에서 controller로 서비스 요청
+2. controller에서 Service로 서비스 호출
+3. service에서 controller로 경과 반환
+4. controller에서 html로 응답
+-->

@@ -1,0 +1,27 @@
+.container > .tab-container {
+    background-color: #eaecee;
+}
+
+.container > .tab-container > label {
+    background-color: #eaecee;
+    color: #808b96;
+    padding: 0.5rem 0.75rem;
+    display: inline-block;
+}
+
+.container > .tab-container > label:has(input:checked){
+    background-color: #273746;
+    color: #ffffff;
+}
+
+.container > .content-wrapper > .content {
+    display: none;
+}
+
+.container > .tab-container:has(input[value="daegu"]:checked) ~ .content-wrapper > .content[data-value="daegu"]{
+    display: block;
+}
+
+.container > .tab-container:has(input[value="tokyo"]:checked) ~ .content-wrapper > .content[data-value="tokyo"]{
+    display: block;
+}

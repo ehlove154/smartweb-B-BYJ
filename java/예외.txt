@@ -1,0 +1,90 @@
+예외
+
+Throwable
+-(java.lang.Throwable) 클래스는 '던질수 있는'이라는 의미로 자바 내에서 발생시킬 수 있는 일반적인 의미의 오류의 최상위 타입
+-try - catch 대상, throw 대상, 및 메서드의 throws 시그니처 대상이 되기 위해서는 직/간접적으로 Throwable 타입을 상속 받아야 한다.
+
+Error
+-(java.lang.Error) 클래스는 Throwable을 상속받아 자바 실행 중 발생할수 있는 환경 요인에 의한 오류를 구현한다.
+-일반적으로 개발자의 개발 실수로 인해 발생하는 문제를 구현하지 않는다. 주로 하드웨어의 메모리 부족이나 가상 환경(JVM)에 치명적인 오류가 있을때 발생한다.
+-개발자가 직접 Error클래스를 상속 받아 사용자 정의의 Error를 만들거나, 고의로 발생시키는 것은 권장되지 않는다.
+-Unchecked Throwable로, 별도의 명시나 처리 없이 발생시킬 수 있다.
+-Error를 상속받는 대표적인 예
+	*OutOfMemoryError : 가상 머신에 할당된 메모리가 부족하여 발생
+	*StackOverflowError : 스택 오버플로우로 인해 발생
+	*VirtualMachineError : 가상 환경(JVM)과 관련된 문제로 발생
+
+Exception
+-(java.lang.Exception) 클래스는 Throwable을 상속 받아 자바 실행 중 발생할 수 있는 일반적인 오류를 구현한다.
+-예외는 크게 RuntimeException 클래스를 직/간접적으로 상속 받는 것과, 그렇지 않은 것으로 나누어진다.
+-사용자 정의의 오류가 필요하다면, Exception 혹은 RuntimeException을 상속받아 사용하는 것이 좋다.
+-Exception 자체는 Checked Throwable이다.
+
+RuntimeException을 상속받는 것
+-Unchecked Throwable로, 별도의 명시나 처리 없이 발생시킬 수 있다.
+-대표적인 예
+	* NullPointerException : 참조 타입의 변수(스택 값)가 가리키고 있는 힙의 주소가 없는 경우에서 이의 멤버에 접근하려 앴을 때 발생
+	* ArrayIndexOutOfBoundsException : 배열 등에서 그 범위를 벗어난 인덱스에 접근하려 하였을때 발생
+	* ArirhmeticException : 수학 및 사칙연산과 관련하여 문제가 있을 때 발생
+	* NumberFormatException : 문자열을 숫자로 변화하려 하였을때 숫자로 변환할 수 없는 문자열을 인자로 전달한 경우 등에 발생
+
+RuntimeException을 상속받지 않는 것
+-Checked Throwable로, 별도의 명시나 처리 없이 발생시킬 수 없다.
+-대표적인 예
+	* IOException : 파일 입출력 및 네트워크 통신 등과 관련하여 오류가 있을때 발생한다.
+	* InterruptedException : 외부 요인으로 스레드가 종료되었을때 발생
+	* TimeOutException : 어떠한 작업에 대한 제한된 시간이 초과되었을때 발생
+
+Throwable 던지기
+-고의로 Throwable을 던지기 위해 throw 키워드를 활용
+	throw [Throwable을 상속 받는 객체];
+
+	   *가령, NullPointerException을 고의로 발생시키기 위해 아래와 같이 작성할 수 있다.
+	throw new NullPointerException();
+
+	NullPointerException e = new NullPointerException();
+	throw e;
+	   *단, 변수를 throw하는 경우 객체화된 타입이 아닌 최종적으로 throw 하는 타입임을 참고함으로 다형성에 의거, Checked 및 Unchecked 여부를 잘 확인하여야 한다.
+-발생시키고자 하는 Throwable이 Checked Throwable이라면, 던지는 구문이 try - catch의 try 구현부 내에 있거나, 메서드에 throw 시그니처가 존재하여야 한다.
+
+try-catch
+-try가 가지는 구현부 안에서 발생하는 오류에 대해 오류를 발생시키지 않고(JVM에 넘기지 않고) catch에서 원하는 로직을 실행하기 위해 사용
+-try - catch문의 구조는 아래와 같다.
+	try {
+		[구현부]
+	} catch ([처리할 예외 선언1]) {
+		[에외 1 발생시 실행할 구현부]
+	} catch ([처리할 예외 선언2]) {
+		[에외 2 발생시 실행할 구현부]
+	} catch ([처리할 예외 선언3]) {
+		[에외 3 발생시 실행할 구현부]
+	} finally {
+		[최종 구현부]
+	}
+
+	   * 하나의 try는 여러개의 catch를 가질 수 있다.
+	   * 단, 반드시 하나 이상의 catch를 포함하여야 한다.
+	   * 여러개의 catch를 사용할때 각 catch는 동일한 타입의 예외를 가져서는 안되며, 선행하는 예외가 후행하는 예외보다 부모여서는 안된다.
+	   * catch하는 예외가 Checked Throwable일 경우 해당 예외를 던질 수 있는 가능성이 있는 로직이 try 내부에 구현되어 있어야 한다. (Exception은 예외)
+	   * finally 문은 선택 사항이며, 이가 가지는 구현부는 try 문을 정상 실행하였든, 오류가 발생하여 catch 문으로 빠졌든 반드시 실행됨을 보장받는다. 모든 catch 보다 아래에 있어야 하고, 없거나, 한개만 사용할 수 있다.
+	   * catch나 finally 문에서 실행되는 구현부는 예외처리가 되지 않음에 유의한다.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+메서드 시그니처
+-예외를 처리하기 위해 try -catch 를 사용하지 않고 메서드에 throws 시그니처를 사용할 경우 발생하는 예외를 메서드 내부의 로직에서 처리하는 것이 아니라, 해당 메서드의 호출자에세 전가하여 예외에 대한 로직을 호출자가 처리하게끔 한다.
+-예외 시그니처가 명시되어 있는 메서드를 호출하는 호출자는 명시된 예외에 대한 적절한 처리 없이 해당 메서드를 호출할 수 없다.(Unchecked Throwable 제외)
+	[메서드 구조] throws [예외, . . . ] {
+		[구현부]
+	}
+
+	   * 가령, HTTP 요청을 전송하고 응답을 받아오는 메서드를 작성하기 위한 예시는 다음과 같다.
+	public static String sendGetRequest(String url) throws IOException, InterruptedException {
+		HttpClient client = HttpClient.newHttpClient();
+		HttpRequest request = HttpRequest.newBuilder()
+				.uri(URI.create(url))
+				.GET()
+				.build();
+		HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+		return response.body();
+    }

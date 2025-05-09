@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>로컬 스토리지(Local Storage)</title>
+</head>
+<body>
+<form>
+    <input type="text" name="text">
+    <button type="submit">저장</button>
+    <button type="button" name="load">불러오기</button>
+</form>
+<script>
+    const $form = document.body.querySelector(`:scope > form`);
+    $form.onsubmit = (e) => {
+        e.preventDefault(); //submit시 페이지 새로고침 방지 (디폴트 값 발생 방지)
+        localStorage.setItem(`example`, $form[`text`].value);
+    };
+
+    $form[`load`].onclick = () => {
+        $form[`text`].value = localStorage.getItem(`example`);
+    };
+</script>
+</body>
+</html>

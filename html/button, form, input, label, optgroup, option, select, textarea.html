@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>form, input, button, label, optgroup, option, select, textarea</title>
+</head>
+<body>
+<form>
+    <ul>
+        <!--        <li>text: <input type="text" spellcheck="true"><br>-->
+        <!--            <input readonly type="text"  value="readonly"><br>-->
+        <!--            <input disabled type="text" value="disabled"></li>-->
+        <!--        <li>button: <input type="button" value="click me"></li>-->
+        <!--        <li>checkbox: <input type="checkbox"></li>-->
+        <!--        <li>color: <input type="color"></li>-->
+        <!--        <li>date: <input type="date"></li>-->
+        <!--        <li>datetime-local: <input type="datetime-local"></li>-->
+        <!--        <li>time: <input type="time"></li>-->
+        <!--        <li>email: <input type="email" placeholder="enter your email"></li>-->
+        <!--        <li>file: <input type="file" multiple accept=".pdf, .mp4"></li>-->
+        <!--        <li>hidden: <input type="hidden"></li>-->
+        <!--        <li>number: <input type="number" disabled></li>-->
+        <!--        <li>password: <input type="password" minlength="9" autofocus required></li>-->
+        <!--        <li>radio: <input type="radio" name="tel" checked>KT <input type="radio" name="tel">SKT <input type="radio" name="tel">LGU+</li>-->
+        <!--        <li>range: <input type="range" min="20" max="100" value="30" step="20"></li>-->
+        <!--        <li>reset: <input type="reset" value="reset"></li>-->
+        <!--        <li>search: <input type="search"></li>-->
+        <!--        <li>submit: <input type="submit" value="submit"></li>-->
+        <!--        <li>tel: <input required type="tel" minlength="13" maxlength="13" pattern="010-\d{4}-\d{4}"></li>-->
+        <!--        <li><input type="button" value="input type button"> <br> &lt;!&ndash; 자식X, 이미지 태그 사용X&ndash;&gt;-->
+        <!--            <button type="button"><img alt="꽃카" src="https://item.kakaocdn.net/do/41b601b57272eca6a17446617ead00a315b3f4e3c2033bfd702a321ec6eda72c" height="50px">button type button</button> &lt;!&ndash; 자식O, 이미지 태그 사용O, 사용빈도가 input button 보다 높음 &ndash;&gt;</li>-->
+        <!--        <li>-->
+        <!--            <select name="menu">-->
+        <!--                <option disabled hidden selected value="-1">select menu</option>-->
+        <!--                <option value="C_01">자장면</option>-->
+        <!--                <option value="C_02">짬뽕</option>-->
+        <!--                <option value="C_03">볶음밥</option>-->
+        <!--            </select>-->
+        <!--            <button type="submit">주문하기</button>-->
+        <!--        </li>-->
+        <li>
+            <label>
+                menu
+                <select name="menu">
+                    <optgroup disabled label="중식">
+                        <option value="C_01">자장면</option>
+                        <option value="C_02">짬뽕</option>
+                        <option value="C_03">볶음밥</option>
+                    </optgroup>
+                    <optgroup label="분식">
+                        <option value="S_01">떡볶이</option>
+                        <option value="S_02">김밥</option>
+                        <option value="S_03">라면</option>
+                    </optgroup>
+                    <optgroup label="일식">
+                        <option value="J_01">초밥</option>
+                        <option value="J_02">돈카츠</option>
+                    </optgroup>
+                </select>
+                <button type="submit">주문하기</button>
+            </label>
+        </li>
+        <li>
+            <textarea>배달의 민족 주문</textarea>
+        </li>
+
+
+    </ul>
+
+</form>
+</body>
+</html>

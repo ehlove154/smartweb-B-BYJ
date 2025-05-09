@@ -1,0 +1,29 @@
+Long 클래스
+-java.lang.Long 클래스는 큰 정수(long)와 관련된 편의 기능을 제공하고, 해당 타입 자체가 long 타입의 리터럴로 작동할 수 있는 큰 정수(long)의 래퍼(wrapper) 클래스
+-Long 클래스가 가지는 실질적인 값은 long이나, 참조 타입임으로 null을 할당받을 수 있다.
+
+--------------------------------------------
+
+정적 멤버 변수
+-MAX_VALUE : long 타입이 가질 수 있는 가장 큰 값
+-MIN_VALUE : long 타입이 가질 수 있는 가장 작은 값
+
+--------------------------------------------
+
+정적 메서드
+-parseLong(String s) : 문자열 s를 long 타입으로 변환하여 반환. 변환할 수 없는 문자열일 경우 NumberFormatException 예외가 발생
+-parseLong(String s, int redix) : redix 진법의 문자열 s를 long타입으로 변환하여 반환
+-toBinaryString(long n) : long타입인 n을 2진수로 변환한 문자열을 반환
+-toHexString(long n) : long타입인 n을 16진수로 변환한 문자열을 반환
+-toOctalString(long n) : long타입인 n을 8진수로 변환한 문자열을 반환
+-toString(long n) : long타입인 n을 문자열로 변환하여 반환
+
+--------------------------------------------
+객체 메서드
+-byteValue( ) : 호출 대상이 가진 일반 long 값을 byte 타입으로 변환하여 반환. 오버/언더플로우가 발생할 수 있음
+-shortValue( ) : 호출 대상이 가진 일반 long 값을 short 타입으로 변환하여 반환. 오버/언더플로우가 발생할 수 있음
+-intValue( ) : 호출 대상이 가진 일반 long 값을 int 타입으로 변환하여 반환. 오버/언더플로우가 발생할 수 있음 
+-longValue( ) : 호출 대상이 가진 일반 long 값을 long 타입으로 변환하여 반환. 자동 언박싱(Auto Unboxing)을 지원함으로 long타입의 변수에 해당객체를 할당하여도 해당 메서드가 실행된다. 해당 객체가 null이라면 NullPointerException이 발생
+-floatValue( ) : 호출 대상이 가진 일반 long 값을 float 타입으로 변환하여 반환
+-doubleValue( ) : 호출 대상이 가진 일반 long 값을 double 타입으로 변환하여 반환
+-toString( ) : 호출 대상이 가진 long 값을 문자열로 변환하여 반환
