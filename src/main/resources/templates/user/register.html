@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>회원가입 - SUB</title>
+    <link rel="stylesheet" href="/assets/styles/common.css">
+    <link rel="stylesheet" href="/user/assets/styles/register.css">
+    <script src="/assets/scripts/common.js"></script>
+    <script defer src="/assets/scripts/dialog.js"></script>
+    <script defer src="/user/assets/scripts/register.js"></script>
+</head>
+<body>
+<form id="registerForm" novalidate>
+    <h1 class="title">회원가입</h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="registerEmail">이메일</label>
+            </th>
+            <td>
+                <div class="row">
+                    <input required autocomplete="off" class="-object-field" id="registerEmail" maxlength="50" minlength="8" name="email" spellcheck="false" type="email">
+                    <span class="warning">이미 사용 중인 이메일입니다.</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="registerPassword">비밀번호</label>
+            </th>
+            <td>
+                <div class="row">
+                    <input required autocomplete="off" class="-object-field" id="registerPassword" maxlength="50" minlength="8" name="password" spellcheck="false" type="password">
+                    <span class="warning">비밀번호가 일치하지 않습니다.</span>
+                </div>
+                <div class="row">
+                    <input required autocomplete="off" class="-object-field" maxlength="50" minlength="8" name="passwordCheck" spellcheck="false" type="password">
+                    <span class="warning">비밀번호를 한 번 더 입력해 주세요.</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="registerNickname">닉네임</label>
+            </th>
+            <td>
+                <div class="row">
+                    <input required autocomplete="off" class="-object-field" id="registerNickname" maxlength="10" minlength="2" name="nickname" spellcheck="false" type="text">
+                    <span class="warning ">이미 사용 중인 닉네임입니다.</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label class="caption" for="registerBirth">생년월일</label>
+            </th>
+            <td>
+                <div class="row">
+                    <input autocomplete="off" class="-object-field" id="registerBirth" name="birth" type="date">
+                    <span>Just wondering...</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th role="none"></th>
+            <td>
+                <div class="row">
+                    <textarea readonly class="-object-field">서비스 이용약관</textarea>
+                </div>
+                <div class="row">
+                    <label class="-object-check">
+                        <input type="checkbox" class="--input" name="agreeTerm">
+                        <span class="--box"></span>
+                        <span class="--caption">[필수] 위 서비스 이용약관을 읽어보았고 이해하였으며 동의합니다.</span>
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th role="none"></th>
+            <td>
+                <div class="row">
+                    <textarea readonly class="-object-field">광고성 정보 수신 약관</textarea>
+                </div>
+                <div class="row">
+                    <label class="-object-check">
+                        <input type="checkbox" class="--input" name="agreeMarketing">
+                        <span class="--box"></span>
+                        <span class="--caption">[선택] 위 광고성 정보 수신 약관을 읽어보았고 이해하였으며 동의합니다.</span>
+                    </label>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="button-container">
+        <a href="/user/login" target="_self" class="-object-button --color-gray">취소</a>
+        <button class="-object-button --color-green" type="submit">회원가입</button>
+    </div>
+</form>
+</body>
+</html>

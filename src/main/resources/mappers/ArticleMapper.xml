@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yjb.studyuserbbs.mappers.ArticleMapper">
+    <insert id="insert"
+            useGeneratedKeys="true"
+            keyColumn="index"
+            keyProperty="index"> <!-- keyColumn="테이블 이름" keyProperty="entity 이름" -->
+        insert into `study_user_bbs`.`articles` (`user_email`, `board_id`, `title`, `content`, `view`, `created_at`, `modified_at`, `is_deleted`)
+        values (#{article.userEmail}, #{article.boardId}, #{article.title}, #{article.content}, #{article.view}, #{article.createdAt}, #{article.modifiedAt}, #{article.isDeleted})
+    </insert>
+
+    <!-- PK를 기준으로 PK가 아닌 모든 열의 값을 수정할 수 있도록 쿼리 작성 -->
+    <update id="update">
+        update `study_user_bbs`.`articles`
+        set `user_email` = #{article.userEmail},
+            `board_id` = #{article.boardId},
+            `title` = #{article.title},
+            `content` = #{article.content},
+            `view` = #{article.view},
+            `created_at` = #{article.createdAt},
+            `modified_at` = #{article.modifiedAt},
+            `is_deleted` = #{article.isDeleted}
+        where `index` = #{article.index}
+        limit 1
+    </update>
+
+    <select id="selectByIndex" resultType="com.yjb.studyuserbbs.entities.ArticleEntity">
+        select `index`       as `index`,
+               `user_email`  as `userEmail`,
+               `board_id`    as `boardId`,
+               `title`       as `title`,
+               `content`     as `content`,
+               `view`        as `view`,
+               `created_at`  as `createdAt`,
+               `modified_at` as `modifiedAt`,
+               `is_deleted`  as `isDeleted`
+        from `study_user_bbs`.`articles`
+        where `index` = #{index}
+        limit 1
+    </select>
+</mapper>

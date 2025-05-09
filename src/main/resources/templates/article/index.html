@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>게시글 읽기 - SUB</title>
+    <link rel="stylesheet" href="/assets/styles/common.css">
+    <link rel="stylesheet" href="/article/assets/styles/read.css">
+    <script th:if="${article == null}">
+        alert("존재하지 않거나 삭제된 게시글입니다.");
+        if (history.length > 1) {
+            history.back();
+        } else {
+            window.close();
+        }
+    </script>
+    <script src="/assets/scripts/common.js"></script>
+    <script defer src="/assets/scripts/dialog.js"></script>
+    <script defer src="/article/assets/scripts/read.js"></script>
+</head>
+<body th:if="${article != null}">
+<div id="wrapper">
+    <h1 class="title" th:text="${board.getDisplayText()}"></h1>
+    <table class="table">
+        <tr>
+            <th scope="row">제목</th>
+            <td colspan="5" th:text="${article.getTitle()}"></td>
+        </tr>
+        <tr>
+            <th scope="row">작성자</th>
+            <td th:text="${article.getUserEmail()}"></td>
+            <th scope="row">조회수</th>
+            <td th:text="${article.getView()}"></td>
+            <th scope="row">작성일</th>
+            <td th:text="${#temporals.format(article.getCreatedAt(), 'yyyy-MM-dd HH:mm:ss') + (article.getModifiedAt() == null ? '' : ' (수정됨)')}"></td>
+        </tr>
+        <tr>
+            <th scope="row">내용</th>
+            <td th:text="${article.getContent()}"></td>
+        </tr>
+    </table>
+    <div class="button-container">
+        <a class="-object-button --color-gray to-list" th:href="@{/board/list (id = ${board.getId()})}">목록</a>
+        <div class="-stretch"></div>
+        <a class="-object-button --color-blue" th:href="@{/article/modify (index = ${article.getIndex()})}"
+           th:if="${session.signedUser != null && (session.signedUser.isAdmin() || session.signedUser.getEmail().equals(article.getUserEmail()))}">수정</a>
+        <button class="-object-button --color-red" name="delete" type="button"
+                th:if="${session.signedUser != null && (session.signedUser.isAdmin() || session.signedUser.getEmail().equals(article.getUserEmail()))}">
+            삭제
+        </button>
+    </div>
+    <form novalidate id="commentForm">
+        <h1 class="title">댓글 (15)</h1>
+        <div class="row">
+            <label class="label -stretch">
+                <textarea required class="-object-field" maxlength="1000" minlength="1" name="content"></textarea>
+            </label>
+            <button class="-object-button --color-green" type="submit">작성</button>
+        </div>
+    </form>
+    <ul id="commentList">
+        <li class="item">
+            <span class="head">
+                <span class="writer">댓글 작성자</span>
+                <span class="action">
+                    <a href="#" class="item modify">수정</a>
+                    <a href="#" class="item delete">삭제</a>
+                </span>
+                <span class="-stretch"></span>
+                <span class="timestamp">0000-00-00 00:00:00</span>
+            </span>
+            <span class="content">댓글 내용</span>
+        </li>
+        <li class="item -mine -sub">
+            <span class="head">
+                <span class="writer">댓글 작성자</span>
+                <span class="action">
+                    <a href="#" class="item modify">수정</a>
+                    <a href="#" class="item delete">삭제</a>
+                </span>
+                <span class="-stretch"></span>
+                <span class="timestamp">0000-00-00 00:00:00</span>
+            </span>
+            <span class="content">댓글 내용</span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

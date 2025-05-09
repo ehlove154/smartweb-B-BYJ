@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yjb.studyuserbbs.mappers.UserMapper">
+
+    <insert id="insertUser">
+        insert into `study_user_bbs`.`users` (`email`, `password`, `nickname`, `birth`, `term_agreed_at`,
+                                              `marketing_agreed_at`, `created_at`, `modified_at`, `is_admin`,
+                                              `is_deleted`, `is_suspended`)
+        values (#{user.email}, #{user.password}, #{user.nickname}, #{user.birthday}, #{user.termAgreedAt},
+                #{user.marketingAgreedAt}, #{user.createdAt}, #{user.modifiedAt}, #{user.isAdmin}, #{user.isDeleted},
+                #{user.isSuspended})
+    </insert>
+
+    <!-- PK를 기준으로 PK를 제외한 모든 열의 값을 UPDATE 할 수 있는 쿼리 -->
+    <update id="update">
+        update `study_user_bbs`.`users`
+        set `password`            = #{user.password},
+            `nickname`            = #{user.nickname},
+            `birth`               = #{user.birthday},
+            `term_agreed_at`      = #{user.termAgreedAt},
+            `marketing_agreed_at` = #{user.marketingAgreedAt},
+            `created_at`          = #{user.createdAt},
+            `modified_at`         = #{user.modifiedAt},
+            `is_admin`            = #{user.isAdmin},
+            `is_deleted`          = #{user.isDeleted},
+            `is_suspended`        = #{user.isSuspended}
+        where `email` = #{user.email}
+        limit 1
+    </update>
+
+    <select id="selectByEmail" resultType="com.yjb.studyuserbbs.entities.UserEntity">
+        select `email`               as `email`,
+               `password`            as `password`,
+               `nickname`            as `nickname`,
+               `birth`               as `birth`,
+               `term_agreed_at`      as `termAgreedAt`,
+               `marketing_agreed_at` as `marketingAgreedAt`,
+               `created_at`          as `createdAt`,
+               `modified_at`         as `modifiedAt`,
+               `is_admin`            as `isAdmin`,
+               `is_deleted`          as `isDeleted`,
+               `is_suspended`        as `isSuspended`
+        from `study_user_bbs`.`users`
+        where `email` = #{email}
+        limit 1
+    </select>
+
+    <select id="selectCountByEmail" resultType="java.lang.Integer">
+        select count(0)
+        from `study_user_bbs`.`users`
+        where `email` = #{email}
+    </select>
+
+    <select id="selectCountByNickname" resultType="java.lang.Integer">
+        select count(0)
+        from `study_user_bbs`.`users`
+        where `nickname` = #{nickname}
+    </select>
+
+    <select id="selectByNickname" resultType="com.yjb.studyuserbbs.entities.UserEntity">
+        SELECT `email`               AS `email`,
+               `password`            AS `password`,
+               `nickname`            AS `nickname`,
+               `birth`               AS `birth`,
+               `term_agreed_at`      AS `termAgreedAt`,
+               `marketing_agreed_at` AS `marketingAgreedAt`,
+               `is_admin`            AS `isAdmin`,
+               `is_deleted`          AS `isDeleted`,
+               `is_suspended`        AS `isSuspended`,
+               `created_at`          AS `createdAt`,
+               `modified_at`         AS `modifiedAt`
+        FROM `study_user_bbs`.`users`
+        WHERE `nickname` = #{nickname}
+        LIMIT 1
+    </select>
+
+</mapper>
