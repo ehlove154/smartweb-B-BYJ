@@ -1,0 +1,171 @@
+@import "./index.toolbar.css";
+@import "./index.header.css";
+@import "./index.main.css";
+@import "index.ad.css";
+@import "./index.footer.css";
+
+body {
+    display: inline-block;
+    min-width: 100%;
+}
+
+body:has(#loginFormGlobalToggle:checked) {
+    overflow: hidden;
+}
+
+body > .login-form-cover {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #212121a0;
+    position: fixed;
+    z-index: 3;
+    display: none;
+}
+
+#loginFormGlobalToggle:checked + .login-form-cover {
+    display: block;
+}
+
+#loginForm {
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    width: 26.25rem;
+    padding: 2.875rem 2rem 1.5rem 2rem;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+    border-radius: 0.25rem;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+#loginFormGlobalToggle:checked ~ #loginForm {
+    display: flex;
+}
+
+#loginForm > .close {
+    font-size: 1.5rem;
+    cursor: pointer;
+    top: 1.5rem;
+    right: 1.5rem;
+    position: absolute;
+}
+
+#loginForm > .icon {
+    width: 2rem;
+}
+
+#loginForm > .primary {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+#loginForm > .secondary {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+#loginForm > .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    width: 17.5rem;
+    margin: 1.5rem 0;
+}
+
+#loginForm > .button-container > .button {
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 0.25rem 0.0625rem #21212105;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    height: 2.375rem;
+    position: relative;
+}
+
+#loginForm > .button-container > .button:hover {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#loginForm > .button-container > .button[name="kakao"]:hover {
+    background-color: #3c1f1f;
+}
+
+#loginForm > .button-container > .button[name="facebook"]:hover {
+    background-color: #3c5a98;
+}
+
+#loginForm > .button-container > .button[name="naver"]:hover {
+    background-color: #1fc801;
+}
+
+#loginForm > .button-container > .button[name="phone"]:hover {
+    background-color: #9b99a9;
+}
+
+#loginForm > .button-container > .button > .icon {
+    top: 50%;
+    left: 2.375rem;
+    transform: translateY(-50%);
+    height: 1.5rem;
+    position: absolute;
+}
+
+#loginForm > .button-container > .button:hover > .icon {
+    filter: brightness(0) invert(100%);
+}
+
+#loginForm > .button-container > .button > .icon[src$=".svg"] {
+    height: 1rem;
+    left: 2.675rem;
+}
+
+#loginForm > .help {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 0.0625rem solid #e0e0e0;
+    color: #757575;
+    line-height: 1.425;
+    font-size: 0.775rem;
+}
+
+#loginForm > .help > .dim {
+    color: #212121;
+}
+
+#loginForm > .help > .link {
+    text-decoration: underline;
+}
+
+body > .global-toggle {
+    display: none;
+}
+
+body > .layout-wrapper {
+    padding: 0 7.5rem;
+}
+
+body > .layout-wrapper > .layout-content {
+    width: 64rem;
+    margin: 0 auto;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 2;
+}
