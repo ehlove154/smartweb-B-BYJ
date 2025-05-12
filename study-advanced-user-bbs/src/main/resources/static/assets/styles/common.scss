@@ -119,6 +119,73 @@ ol, ul {
   }
 }
 
+.--loading {
+  @include flex(column, center, center, 1.25rem);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0.5rem);
+  background-color: #212325e0;
+  position: fixed;
+  z-index: 7;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: 175ms;
+  transition-property: opacity;
+  transition-timing-function: ease;
+
+  &.-visible {
+    opacity: 1;
+    pointer-events: auto;
+
+    > .---icon {
+      top: 0;
+      opacity: 1;
+    }
+
+    > .---caption {
+      top: 0;
+      opacity: 1;
+      transition-delay: 100ms;
+    }
+  }
+
+  > .---icon {
+    @keyframes animation {
+      from {
+        transform: rotateZ(0deg);
+      }
+      to {
+        transform: rotateZ(360deg);
+      }
+    }
+    top: 0.25rem;
+    width: 3.5rem;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-name: animation;
+    animation-timing-function: linear;
+    opacity: 0;
+    position: relative;
+    transition-duration: 175ms;
+    transition-property: top, opacity;
+    transition-timing-function: ease;
+  }
+
+  > .---caption {
+    top: 0.25rem;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 400;
+    opacity: 0;
+    position: relative;
+    transition-duration: 175ms;
+    transition-property: top, opacity;
+    transition-timing-function: ease;
+  }
+}
+
 body:has(.--dialog.-visible) {
   overflow: hidden !important;
 }

@@ -16,5 +16,5 @@ public class EmailTokenEntity {
     private String userAgent;
     private boolean isUsed;
     private LocalDateTime createdAt;
-    private LocalDateTime expiredAt;
+    private LocalDateTime expiresAt;
 }
