@@ -4,6 +4,7 @@ import com.yjb.studyadvanceduserbbs.entities.EmailTokenEntity;
 import com.yjb.studyadvanceduserbbs.mappers.EmailTokenMapper;
 import com.yjb.studyadvanceduserbbs.mappers.UserMapper;
 import com.yjb.studyadvanceduserbbs.results.CommonResult;
+import com.yjb.studyadvanceduserbbs.results.Result;
 import com.yjb.studyadvanceduserbbs.results.ResultTuple;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -90,5 +91,9 @@ public class UserService {
                 .result(CommonResult.SUCCESS)
                 .payload(emailToken)
                 .build();
+    }
+
+    public Result checkNickname(String nickname) {
+        return null;
     }
 }

@@ -8,6 +8,7 @@ import com.yjb.studyadvanceduserbbs.services.EmailTokenService;
 import com.yjb.studyadvanceduserbbs.services.UserService;
 import jakarta.mail.MessagingException;
 import jakarta.servlet.http.HttpServletRequest;
+import org.apache.ibatis.annotations.Param;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -62,5 +63,11 @@ public class UserController {
             response.put("salt", result.getPayload().getSalt());
         }
         return response.toString();
+    }
+
+    @RequestMapping(value = "/nickname-check", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String postNicknameCheck(@RequestParam(value = "nickname") String nickname) {
+        return null;
     }
 }

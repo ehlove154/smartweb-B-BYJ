@@ -122,6 +122,65 @@ $registerForm['emailCodeVerifyButton'].addEventListener('click', () => {
     xhr.send(formData);
 });
 
+$registerForm['nicknameCheckButton'].addEventListener('click', () => {
+    const $nicknameLabel = $registerForm.querySelector('.--object-label:has(input[name="nickname"])');
+    if ($registerForm['nickname'].value === '') {
+        $nicknameLabel.setValid(false, '닉네임을 입력해 주세요.');
+        $registerForm['nickname'].focus();
+        return;
+    }
+    if (!nicknameRegex.test($registerForm['nickname'].value)) {
+        $nicknameLabel.setValid(false, '올바른 닉네임을 입력해 주세요.');
+        $registerForm['nickname'].focus();
+        $registerForm['nickname'].select();
+        return;
+    }
+
+    const xhr = new XMLHttpRequest();
+    const formData = new FormData();
+    formData.append('nickname', $registerForm['nickname'].value);
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState !== XMLHttpRequest.DONE) {
+            return;
+        }
+        if (xhr.status < 200 || xhr.status >= 300) {
+            dialog.showSimpleOk('닉네임 중복 확인', '요청을 처리하는 도중 오류가 발생하였습닏다.\n잠시 후 다시 시도해 주세요.')
+            return;
+        }
+        const response = JSON.parse(xhr.responseText);
+        switch (response.result) {
+            case 'failure_duplicate':
+                dialog.showSimpleOk('닉네임 중복 확인',`입력하신 닉네임 '${$registerForm['nickname'].value}'은/는 이미 사용 중입니다.`, () => {
+                    $registerForm['nickname'].focus();
+                    $registerForm['nickname'].select();
+                });
+                break;
+            case 'success':
+                dialog.show({
+                    title: '닉네임 중복 확인',
+                    content: `입력하신 닉네임 '${$registerForm['nickname'].value}'은/는 사용가능합니다.\n이 닉네임을 사용할까요?`,
+                    buttons: [
+                        {caption: '아니요'},
+                        {
+                            caption: '네',
+                            color: 'green',
+                            onclick: ($modal) => {
+                                dialog.hide($modal);
+                                $registerForm['nickname'].setDisabled(true);
+                                $registerForm['nicknameCheckButton'].setDisabled(false);
+                            }
+                        }
+                    ]
+                });
+                break;
+            default:
+                dialog.showSimpleOk('닉네임 중복 확인', '알 수 없는 이유로 닉네임 중복을 확인하지 못하였습니다. 잠시 후 다시 시도해 주세요.');
+        }
+    };
+    xhr.open('POST', '/user/nickname-check');
+    xhr.send(formData);
+});
+
 $registerForm['previous'].onclick = () => {
     currentStep -= 2;
     $registerForm.dispatchEvent(new Event('submit'));

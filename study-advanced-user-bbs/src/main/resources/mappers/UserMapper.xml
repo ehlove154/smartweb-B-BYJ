@@ -6,4 +6,10 @@
         from `saub`.`users`
         where `email` = #{email}
     </select>
+
+    <select id="selectCountByNickname" resultType="java.lang.Integer">
+        select count(0)
+        from `saub`.`users`
+        where `nickname` = #{nickname}
+    </select>
 </mapper>
