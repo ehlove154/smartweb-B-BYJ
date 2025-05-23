@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>게시글 작성 -SAUB</title>
+    <link rel="stylesheet" type="text/css" href="/assets/libraries/ckeditor5/ckeditor5.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/common.min.css">
+    <link rel="stylesheet" type="text/css" href="/article/assets/styles/write.min.css">
+    <script th:if="${session.signedUser == null}">
+        alert("로그인 후 이용할 수 있습니다.");
+        location.href = `${origin}/user/login?forward=${encodeURI(location.href)}`;
+    </script>
+    <script th:if="${session.signedUser != null && board == null}">
+        alert("존재하지 않는 게시판 입니다.");
+        if (history.length > 1) {
+            history.back();
+        } else {
+            history.close();
+        }
+    </script>
+    <script src="/assets/libraries/ckeditor5/ckeditor5.js" type="module"></script>
+    <script src="/assets/scripts/common.js" type="text/javascript"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "ckeditor5": "/assets/libraries/ckeditor5/ckeditor5.js",
+                "ckeditor5/": "/assets/libraries/ckeditor5/"
+            }
+        }
+    </script>
+    <script defer src="/article/assets/scripts/write-ckeditor.js" type="module"></script>
+    <script defer src="/article/assets/scripts/write.js" type="text/javascript"></script>
+</head>
+<body th:if="${session.signedUser != null && board != null}">
+<form novalidate id="writeForm">
+    <input hidden name="boardId" type="hidden" th:value="${board.getId()}">
+    <h1 class="title">게시글 작성</h1>
+    <label class="--object-label">
+        <span class="---caption">게시판</span>
+        <input readonly class="--object-field ---field" name="board" type="text" th:value="${board.getDisplayText()}">
+    </label>
+    <label class="--object-label">
+        <span class="---caption">제목</span>
+        <input autofocus autocomplete="off" class="--object-field ---field" maxlength="100" minlength="1" name="title" type="text">
+    </label>
+    <label class="--object-label">
+        <span class="---caption">내용</span>
+        <textarea autocomplete="off" name="content"></textarea>
+    </label>
+    <div class="button-container">
+        <button class="--object-button -color-gray" name="cancel" type="button">돌아가기</button>
+        <button class="--object-button -color-green" type="submit">작성하기</button>
+    </div>
+</form>
+</body>
+</html>

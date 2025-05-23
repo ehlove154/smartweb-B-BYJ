@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yjb.studyadvanceduserbbs.mappers.ArticleMapper">
+
+    <insert id="insert"
+    useGeneratedKeys="true"
+    keyColumn="id"
+    keyProperty="id">
+        insert into `saub`.`articles` (board_id, user_email, title, content, view, created_at, modified_at, is_deleted)
+        values (#{article.boardId}, #{article.userEmail}, #{article.title}, #{article.content}, #{article.view}, #{article.createdAt}, #{article.modifiedAt}, #{article.isDeleted})
+    </insert>
+
+    <update id="update">
+        update `saub`.`articles`
+        set `board_id`    = #{article.boardId},
+            `user_email`  = #{article.userEmail},
+            `title`       = #{article.title},
+            `content`     = #{article.content},
+            `view`        = #{article.view},
+            `created_at`  = #{article.createdAt},
+            `modified_at` = #{article.modifiedAt},
+            `is_deleted`  = #{article.isDeleted}
+        where `id` = #{article.id}
+        limit 1
+    </update>
+
+    <select id="selectById" resultType="com.yjb.studyadvanceduserbbs.entities.ArticleEntity">
+        select `id`          as `id`,
+               `board_id`    as `boardId`,
+               `user_email`  as `userEmail`,
+               `title`       as `title`,
+               `content`     as `content`,
+               `view`        as `view`,
+               `created_at`  as `createdAt`,
+               `modified_at` as `modifiedAt`,
+               `is_deleted`  as `isDeleted`
+        from `saub`.`articles`
+        where `id` = #{id}
+        limit 1
+    </select>
+
+    <select id="selectPrevious" resultType="com.yjb.studyadvanceduserbbs.entities.ArticleEntity">
+        select `id`          as `id`,
+               `board_id`    as `boardId`,
+               `user_email`  as `userEmail`,
+               `title`       as `title`,
+               `content`     as `content`,
+               `view`        as `view`,
+               `created_at`  as `createdAt`,
+               `modified_at` as `modifiedAt`,
+               `is_deleted`  as `isDeleted`
+        from `saub`.`articles`
+        where `id` > #{id}
+          and `is_deleted` = false
+        order by `id`
+        limit 1
+    </select>
+
+    <select id="selectNext" resultType="com.yjb.studyadvanceduserbbs.entities.ArticleEntity"><![CDATA[
+        select `id`          as `id`,
+               `board_id`    as `boardId`,
+               `user_email`  as `userEmail`,
+               `title`       as `title`,
+               `content`     as `content`,
+               `view`        as `view`,
+               `created_at`  as `createdAt`,
+               `modified_at` as `modifiedAt`,
+               `is_deleted`  as `isDeleted`
+        from `saub`.`articles`
+        where `id` < #{id}
+          and `is_deleted` = false
+        order by `id` desc
+        limit 1
+        ]]></select>
+</mapper>

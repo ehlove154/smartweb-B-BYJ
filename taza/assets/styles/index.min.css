@@ -1,0 +1,1 @@
+@import "./index/console.css";@import "./index/map.css";@import "./index/addressdialog.css";@import "./index/paydialog.css";@import "./index/dialog.css";@import "./index/history-dialog.css";#nav,body{display:flex;flex-direction:row;align-items:stretch;justify-content:flex-start}body,html{height:100%}#nav{top:1rem;right:1rem;position:fixed;z-index:2;gap:.5rem}

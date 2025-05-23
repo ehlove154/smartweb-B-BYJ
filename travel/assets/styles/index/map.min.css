@@ -1,0 +1,12 @@
+#map{flex-grow:1;height:50rem;aspect-ratio:1/.7;margin-right:2rem;top:1.5rem;border-radius:2rem;position:relative;overflow:hidden}#category{position:absolute;top:.625rem;left:.625rem;border-radius:.313rem;border:.0625rem solid #909090;box-shadow:0 .625rem .625rem rgba(0,0,0,.4);background:#fff;overflow:hidden;z-index:2;padding:1rem;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:.5rem;box-sizing:border-box}#category>li{float:left;width:3.125rem;text-align:center;cursor:pointer;white-space:nowrap;box-sizing:border-box;position:relative;display:block}#category>li:last-child{margin-right:0;border-right:0}#category>li>img{display:block;margin:0 auto .188rem;width:1.688rem;height:1.75rem}#category>li.on>.visitor,#category>li:hover>.visitor{content:url(../../images/place/index.main.map.visitor-hover.png)}#category>li.on>.restaurant,#category>li:hover>.restaurant{content:url(../../images/place/index.main.map.restaurant-hover.png)}#category>li.on>.accommodation,#category>li:hover>.accommodation{content:url(../../images/place/index.main.map.accommodation-hover.png)}
+/*!*#main > #place-container > .place:not(:first-child) > .title:before {*!*/
+/*!*    position: absolute;*!*/
+/*!*    content: '';*!*/
+/*!*    width: 100%;*!*/
+/*!*    height: 0.00625rem;*!*/
+/*!*    !*background-color: #f73034;*!*!*/
+/*!*    background-color: #e0e0e0;*!*/
+/*!*    display: inline-block;*!*/
+/*!*    top: -1.5rem;*!*/
+/*!*    left: 0;*!*/
+/*!*}*!*/
